@@ -3,3 +3,4 @@ QTY     PART NO     DESC                                    PRICE
 1       2342992     VOLTAGE DETECTOR, 200NA,SOT-23-5        £0.10
 1       1973280     CAP, ALU ELEC, 100UF, 6.3V, SMD         £0.08
 1       2428231     INDUCTOR, SEMI-SHLD, 4.7UH, 20%, 3.1A   £0.17
+1       2320811     CAP, MLCC, X5R, 4.7UF, 6.3V, 0603       £0.02
