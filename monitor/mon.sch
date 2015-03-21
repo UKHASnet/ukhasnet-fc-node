@@ -2114,6 +2114,7 @@ DIN A4, landscape with extra doc field</description>
 <part name="C7" library="passives-7351" deviceset="CAPACITOR" device="0603-L" value="100n"/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="FRAME1" library="frames" deviceset="DINA4_L" device=""/>
+<part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2123,8 +2124,8 @@ DIN A4, landscape with extra doc field</description>
 <instance part="U$1" gate="G$1" x="76.2" y="116.84"/>
 <instance part="JP1" gate="G$1" x="22.86" y="139.7" rot="R180"/>
 <instance part="IC1" gate="G$1" x="48.26" y="152.4" rot="R180"/>
-<instance part="U$2" gate="A" x="172.72" y="106.68" rot="R180"/>
-<instance part="J$1" gate="1" x="139.7" y="127" rot="R180"/>
+<instance part="U$2" gate="A" x="187.96" y="121.92" rot="R180"/>
+<instance part="J$1" gate="1" x="154.94" y="142.24" rot="R180"/>
 <instance part="ESP8266" gate="G$1" x="99.06" y="157.48"/>
 <instance part="SUPPLY1" gate="G$1" x="35.56" y="162.56"/>
 <instance part="GND1" gate="1" x="48.26" y="167.64" rot="R180"/>
@@ -2135,9 +2136,9 @@ DIN A4, landscape with extra doc field</description>
 <instance part="GND4" gate="1" x="60.96" y="88.9"/>
 <instance part="GND5" gate="1" x="60.96" y="119.38"/>
 <instance part="SUPPLY3" gate="G$1" x="60.96" y="109.22"/>
-<instance part="SUPPLY4" gate="G$1" x="195.58" y="139.7"/>
-<instance part="GND6" gate="1" x="152.4" y="127" rot="R270"/>
-<instance part="GND7" gate="1" x="152.4" y="137.16" rot="R270"/>
+<instance part="SUPPLY4" gate="G$1" x="210.82" y="154.94"/>
+<instance part="GND6" gate="1" x="167.64" y="142.24" rot="R270"/>
+<instance part="GND7" gate="1" x="167.64" y="152.4" rot="R270"/>
 <instance part="SUPPLY5" gate="G$1" x="86.36" y="160.02" rot="R90"/>
 <instance part="GND8" gate="1" x="111.76" y="162.56" rot="R90"/>
 <instance part="U$3" gate="G$1" x="226.06" y="60.96"/>
@@ -2160,6 +2161,7 @@ DIN A4, landscape with extra doc field</description>
 <instance part="GND16" gate="1" x="60.96" y="142.24"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="162.56" y="0"/>
+<instance part="GND17" gate="1" x="162.56" y="154.94" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -2168,8 +2170,8 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="U$2" gate="A" pin="ANT"/>
 <pinref part="J$1" gate="1" pin="SIGNAL"/>
-<wire x1="154.94" y1="132.08" x2="144.78" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="132.08" x2="144.78" y2="127" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="147.32" x2="162.56" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="147.32" x2="160.02" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -2320,6 +2322,23 @@ DIN A4, landscape with extra doc field</description>
 <pinref part="C6" gate="G$1" pin="1"/>
 <pinref part="GND16" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="GND17" gate="1" pin="GND"/>
+<pinref part="J$1" gate="1" pin="GND@3"/>
+<wire x1="160.02" y1="154.94" x2="157.48" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="J$1" gate="1" pin="GND@2"/>
+<wire x1="157.48" y1="152.4" x2="160.02" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="152.4" x2="160.02" y2="154.94" width="0.1524" layer="91"/>
+<junction x="160.02" y="154.94"/>
+<pinref part="J$1" gate="1" pin="GND@1"/>
+<wire x1="157.48" y1="149.86" x2="160.02" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="149.86" x2="160.02" y2="152.4" width="0.1524" layer="91"/>
+<junction x="160.02" y="152.4"/>
+<pinref part="J$1" gate="1" pin="GND@0"/>
+<wire x1="157.48" y1="147.32" x2="160.02" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="147.32" x2="160.02" y2="149.86" width="0.1524" layer="91"/>
+<junction x="160.02" y="149.86"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -2356,8 +2375,8 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="U$2" gate="A" pin="VCC"/>
 <pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
-<wire x1="193.04" y1="137.16" x2="195.58" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="195.58" y1="137.16" x2="195.58" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="152.4" x2="210.82" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="152.4" x2="210.82" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
@@ -2435,8 +2454,8 @@ DIN A4, landscape with extra doc field</description>
 </segment>
 <segment>
 <pinref part="U$2" gate="A" pin="SCK"/>
-<wire x1="154.94" y1="121.92" x2="152.4" y2="121.92" width="0.1524" layer="91"/>
-<label x="152.4" y="121.92" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
+<wire x1="170.18" y1="137.16" x2="167.64" y2="137.16" width="0.1524" layer="91"/>
+<label x="167.64" y="137.16" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="D0"/>
@@ -2452,8 +2471,8 @@ DIN A4, landscape with extra doc field</description>
 </segment>
 <segment>
 <pinref part="U$2" gate="A" pin="MISO"/>
-<wire x1="154.94" y1="116.84" x2="152.4" y2="116.84" width="0.1524" layer="91"/>
-<label x="152.4" y="116.84" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
+<wire x1="170.18" y1="132.08" x2="167.64" y2="132.08" width="0.1524" layer="91"/>
+<label x="167.64" y="132.08" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
@@ -2464,8 +2483,8 @@ DIN A4, landscape with extra doc field</description>
 </segment>
 <segment>
 <pinref part="U$2" gate="A" pin="MOSI"/>
-<wire x1="154.94" y1="111.76" x2="152.4" y2="111.76" width="0.1524" layer="91"/>
-<label x="152.4" y="111.76" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
+<wire x1="170.18" y1="127" x2="167.64" y2="127" width="0.1524" layer="91"/>
+<label x="167.64" y="127" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="D1"/>
@@ -2476,8 +2495,8 @@ DIN A4, landscape with extra doc field</description>
 <net name="RFM_CS" class="0">
 <segment>
 <pinref part="U$2" gate="A" pin="NSS"/>
-<wire x1="154.94" y1="106.68" x2="152.4" y2="106.68" width="0.1524" layer="91"/>
-<label x="152.4" y="106.68" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
+<wire x1="170.18" y1="121.92" x2="167.64" y2="121.92" width="0.1524" layer="91"/>
+<label x="167.64" y="121.92" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="PA1"/>
@@ -2492,9 +2511,9 @@ DIN A4, landscape with extra doc field</description>
 <label x="124.46" y="111.76" size="1.27" layer="95" font="fixed" xref="yes"/>
 </segment>
 <segment>
-<pinref part="ESP8266" gate="G$1" pin="1"/>
-<wire x1="91.44" y1="162.56" x2="88.9" y2="162.56" width="0.1524" layer="91"/>
-<label x="88.9" y="162.56" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
+<pinref part="ESP8266" gate="G$1" pin="8"/>
+<wire x1="106.68" y1="154.94" x2="109.22" y2="154.94" width="0.1524" layer="91"/>
+<label x="109.22" y="154.94" size="1.27" layer="95" font="fixed" xref="yes"/>
 </segment>
 </net>
 <net name="UART_RX" class="0">
@@ -2504,9 +2523,9 @@ DIN A4, landscape with extra doc field</description>
 <label x="124.46" y="109.22" size="1.27" layer="95" font="fixed" xref="yes"/>
 </segment>
 <segment>
-<pinref part="ESP8266" gate="G$1" pin="8"/>
-<wire x1="106.68" y1="154.94" x2="109.22" y2="154.94" width="0.1524" layer="91"/>
-<label x="109.22" y="154.94" size="1.27" layer="95" font="fixed" xref="yes"/>
+<pinref part="ESP8266" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="162.56" x2="88.9" y2="162.56" width="0.1524" layer="91"/>
+<label x="88.9" y="162.56" size="1.27" layer="95" font="fixed" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$3" class="0">
