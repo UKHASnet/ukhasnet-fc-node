@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3095,6 +3095,7 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="DISP" gate="G$1" pin="5"/>
 <wire x1="22.86" y1="48.26" x2="25.4" y2="48.26" width="0.1524" layer="91"/>
+<label x="25.4" y="48.26" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -3111,6 +3112,7 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="DISP" gate="G$1" pin="3"/>
 <wire x1="22.86" y1="43.18" x2="25.4" y2="43.18" width="0.1524" layer="91"/>
+<label x="25.4" y="43.18" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -3139,6 +3141,7 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="DISP" gate="G$1" pin="4"/>
 <wire x1="22.86" y1="45.72" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
+<label x="25.4" y="45.72" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="RFM_CS" class="0">
@@ -3193,6 +3196,18 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="DISP" gate="G$1" pin="6"/>
 <wire x1="22.86" y1="50.8" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
+<label x="25.4" y="50.8" size="1.27" layer="95" font="vector" xref="yes"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA0"/>
+<wire x1="121.92" y1="134.62" x2="152.4" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="134.62" x2="152.4" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="109.22" x2="218.44" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="109.22" x2="218.44" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="A" pin="DIO0"/>
+<wire x1="218.44" y1="121.92" x2="208.28" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
