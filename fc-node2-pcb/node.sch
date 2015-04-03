@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16194,6 +16194,62 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="frames">
+<description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="DINA4_L">
+<frame x1="0" y1="0" x2="264.16" y2="180.34" columns="4" rows="4" layer="94" border-left="no" border-top="no" border-right="no" border-bottom="no"/>
+</symbol>
+<symbol name="DOCFIELD">
+<wire x1="0" y1="0" x2="71.12" y2="0" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="15.24" x2="87.63" y2="15.24" width="0.1016" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="0" y1="5.08" x2="71.12" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="0" y1="5.08" x2="0" y2="15.24" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="15.24" x2="101.6" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="5.08" x2="71.12" y2="0" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="5.08" x2="87.63" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="0" x2="101.6" y2="0" width="0.1016" layer="94"/>
+<wire x1="87.63" y1="15.24" x2="87.63" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="87.63" y1="15.24" x2="0" y2="15.24" width="0.1016" layer="94"/>
+<wire x1="87.63" y1="5.08" x2="101.6" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="5.08" x2="101.6" y2="0" width="0.1016" layer="94"/>
+<wire x1="0" y1="15.24" x2="0" y2="22.86" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="35.56" x2="0" y2="35.56" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="35.56" x2="101.6" y2="22.86" width="0.1016" layer="94"/>
+<wire x1="0" y1="22.86" x2="101.6" y2="22.86" width="0.1016" layer="94"/>
+<wire x1="0" y1="22.86" x2="0" y2="35.56" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="22.86" x2="101.6" y2="15.24" width="0.1016" layer="94"/>
+<text x="1.27" y="1.27" size="2.54" layer="94">Date:</text>
+<text x="12.7" y="1.27" size="2.54" layer="94">&gt;LAST_DATE_TIME</text>
+<text x="72.39" y="1.27" size="2.54" layer="94">Sheet:</text>
+<text x="86.36" y="1.27" size="2.54" layer="94">&gt;SHEET</text>
+<text x="88.9" y="11.43" size="2.54" layer="94">REV:</text>
+<text x="1.27" y="19.05" size="2.54" layer="94">TITLE:</text>
+<text x="1.27" y="11.43" size="2.54" layer="94">Document Number:</text>
+<text x="17.78" y="19.05" size="2.54" layer="94">&gt;DRAWING_NAME</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DINA4_L" prefix="FRAME" uservalue="yes">
+<description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
+DIN A4, landscape with extra doc field</description>
+<gates>
+<gate name="G$1" symbol="DINA4_L" x="0" y="0"/>
+<gate name="G$2" symbol="DOCFIELD" x="162.56" y="0" addlevel="must"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -16234,6 +16290,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="IC1" library="Mine" deviceset="HTU21D" device=""/>
 <part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="FRAME1" library="frames" deviceset="DINA4_L" device=""/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C0603" value="100n"/>
 </parts>
 <sheets>
 <sheet>
@@ -16270,6 +16328,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="IC1" gate="G$1" x="109.22" y="-50.8"/>
 <instance part="SUPPLY6" gate="G$1" x="114.3" y="-33.02"/>
 <instance part="GND8" gate="1" x="114.3" y="-68.58"/>
+<instance part="FRAME1" gate="G$1" x="-40.64" y="-101.6"/>
+<instance part="FRAME1" gate="G$2" x="121.92" y="-101.6"/>
+<instance part="C3" gate="G$1" x="-7.62" y="-43.18"/>
 </instances>
 <busses>
 </busses>
@@ -16324,6 +16385,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-5.08" y1="-60.96" x2="-7.62" y2="-60.96" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="-7.62" y1="-60.96" x2="-7.62" y2="-63.5" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="-7.62" y1="-48.26" x2="-7.62" y2="-60.96" width="0.1524" layer="91"/>
+<junction x="-7.62" y="-60.96"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="GND"/>
@@ -16364,6 +16428,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-7.62" y1="-27.94" x2="-7.62" y2="-30.48" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="VCC"/>
 <wire x1="-7.62" y1="-30.48" x2="-5.08" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="-7.62" y1="-30.48" x2="-7.62" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="-7.62" y="-30.48"/>
 </segment>
 <segment>
 <pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
