@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16627,6 +16627,12 @@ DIN A4, landscape with extra doc field</description>
 <pinref part="U$1" gate="G$1" pin="(PCINT1/AIN0/ADC1)PA1"/>
 <wire x1="45.72" y1="-58.42" x2="48.26" y2="-58.42" width="0.1524" layer="91"/>
 <label x="48.26" y="-58.42" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="(PCINT9/XTAL2)PB1"/>
+<wire x1="45.72" y1="-35.56" x2="50.8" y2="-35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

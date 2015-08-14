@@ -52,8 +52,9 @@ int main()
         cli();
         GIMSK = 0x00;
         sleep_disable();
-        /* Need about 5ms for the cap to charge back up */
-        _delay_ms(100);
+
+        /* Recharge cap */
+        _delay_ms(5);
     }
 
     return 0;
