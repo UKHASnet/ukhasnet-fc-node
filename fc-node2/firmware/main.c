@@ -8,6 +8,7 @@
 #include <util/delay.h>
 #include <avr/sleep.h>
 #include <avr/interrupt.h>
+#include <avr/wdt.h>
 
 #define EN_DDR DDRA
 #define EN_PIN 3
@@ -20,6 +21,12 @@
 
 int main()
 {
+    /* disable watchdog */
+    wdt_disable();
+
+    /* EN pin should be 0 */
+    PORTA &= ~_BV(EN_PIN);
+
     /* EN on */
     REG_ENABLE();
 
@@ -46,7 +53,7 @@ int main()
         GIMSK = 0x00;
         sleep_disable();
         /* Need about 5ms for the cap to charge back up */
-        _delay_ms(5);
+        _delay_ms(100);
     }
 
     return 0;
