@@ -69,7 +69,7 @@ int main()
 
         /*if(rf_init_ok)*/
         _delay_ms(200);
-        /*rf69_send((uint8_t*)testpacket, strlen(testpacket), 2); */
+        rf69_send((uint8_t*)testpacket, strlen(testpacket), 2); 
         _delay_ms(1000);
     }
 
