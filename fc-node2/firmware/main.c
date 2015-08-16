@@ -9,6 +9,10 @@
 #include <avr/sleep.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
+#include <string.h>
+
+#include "RFM69.h"
+#include "RFM69Config.h"
 
 #define EN_DDR DDRA
 #define EN_PIN 3
@@ -18,6 +22,8 @@
 
 /** Disable the reg by driving low */
 #define REG_DISABLE() do { EN_DDR |= _BV(EN_PIN); } while(0)
+
+char testpacket[] = "2aT25.6H35[JF0]";
 
 int main()
 {
@@ -33,28 +39,38 @@ int main()
     /* disable pullups */
     MCUCR |= _BV(PUD);
 
+    /* Enable and configure RFM69 */
+    while(!rf69_init());
+
     /* All periphs off */
-    PRR |= _BV(PRTIM0) | _BV(PRUSI) | _BV(PRADC);
+    //PRR |= _BV(PRTIM0) | _BV(PRUSI) | _BV(PRADC);
+    //
+    DDRA |= _BV(7);
+    PORTA &= ~_BV(7);
 
     while(1)
     {
-        /* Interrupt on INT0 low level */
+        /*
+        // Interrupt on INT0 low level
         MCUCR &= ~(_BV(ISC01) | _BV(ISC00));
         GIMSK |= _BV(INT0);
 
-        /* And sleep ZzZzZ */
+        // And sleep ZzZzZ
         set_sleep_mode(SLEEP_MODE_PWR_DOWN);
         sleep_enable();
-        /* turn off reg and sleep */
+        // turn off reg and sleep
         REG_DISABLE();
         sei();
         sleep_cpu();
         cli();
         GIMSK = 0x00;
         sleep_disable();
+        */
 
-        /* Recharge cap */
-        _delay_ms(5);
+        /*if(rf_init_ok)*/
+        _delay_ms(200);
+        rf69_send((uint8_t*)testpacket, strlen(testpacket), 2); 
+        _delay_ms(1000);
     }
 
     return 0;

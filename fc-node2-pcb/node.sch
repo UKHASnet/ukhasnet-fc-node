@@ -16292,6 +16292,7 @@ DIN A4, landscape with extra doc field</description>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="FRAME1" library="frames" deviceset="DINA4_L" device=""/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0603" value="100n"/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="R0603"/>
 </parts>
 <sheets>
 <sheet>
@@ -16331,6 +16332,7 @@ DIN A4, landscape with extra doc field</description>
 <instance part="FRAME1" gate="G$1" x="-40.64" y="-101.6"/>
 <instance part="FRAME1" gate="G$2" x="121.92" y="-101.6"/>
 <instance part="C3" gate="G$1" x="-7.62" y="-43.18"/>
+<instance part="R4" gate="G$1" x="129.54" y="-7.62" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -16436,6 +16438,11 @@ DIN A4, landscape with extra doc field</description>
 <pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
 <pinref part="IC1" gate="G$1" pin="VDD"/>
 <wire x1="114.3" y1="-33.02" x2="114.3" y2="-35.56" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="129.54" y1="-2.54" x2="129.54" y2="0" width="0.1524" layer="91"/>
+<label x="129.54" y="0" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -16568,6 +16575,11 @@ DIN A4, landscape with extra doc field</description>
 <wire x1="45.72" y1="-55.88" x2="48.26" y2="-55.88" width="0.1524" layer="91"/>
 <label x="48.26" y="-55.88" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="129.54" y1="-12.7" x2="129.54" y2="-15.24" width="0.1524" layer="91"/>
+<label x="129.54" y="-15.24" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>
@@ -16633,6 +16645,18 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="U$1" gate="G$1" pin="(PCINT9/XTAL2)PB1"/>
 <wire x1="45.72" y1="-35.56" x2="50.8" y2="-35.56" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="(PCINT7/ICP/OC0B/ADC7)PA7"/>
+<wire x1="45.72" y1="-43.18" x2="48.26" y2="-43.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="U$4" gate="A" pin="RESET"/>
+<wire x1="152.4" y1="53.34" x2="149.86" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

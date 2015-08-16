@@ -23,7 +23,7 @@ OBJECTS = $(SOURCES:.c=.o)
 AVRDUDE = avrdude $(PROGRAMMER) -p $(DEVICE)
 
 # Disable warning of strict-aliasing since uIP type-puns
-COMPILE = avr-gcc -Wall -Os -fno-strict-aliasing -gdwarf-2 -std=gnu99 -DF_CPU=$(CLOCK) -mmcu=attiny44
+COMPILE = avr-gcc -Wall -Os -fno-strict-aliasing -gdwarf-2 -std=gnu99 -DF_CPU=$(CLOCK) -mmcu=attiny44a
 
 # symbolic targets:
 all:	main.hex
