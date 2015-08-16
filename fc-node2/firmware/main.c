@@ -45,6 +45,8 @@ int main()
     /* Enable and configure RFM69 */
     rf69_init();
 
+    rf69_setMode(RFM69_MODE_SLEEP);
+
     /* All periphs off */
     //PRR |= _BV(PRTIM0) | _BV(PRUSI) | _BV(PRADC);
 
