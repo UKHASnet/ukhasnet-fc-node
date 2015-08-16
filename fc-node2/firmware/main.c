@@ -39,14 +39,14 @@ int main()
     /* disable pullups */
     MCUCR |= _BV(PUD);
 
+    DDRA |= _BV(7);
+    PORTA &= ~_BV(7);
+
     /* Enable and configure RFM69 */
-    while(!rf69_init());
+    rf69_init();
 
     /* All periphs off */
     //PRR |= _BV(PRTIM0) | _BV(PRUSI) | _BV(PRADC);
-    //
-    DDRA |= _BV(7);
-    PORTA &= ~_BV(7);
 
     while(1)
     {

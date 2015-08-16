@@ -58,8 +58,13 @@ bool rf69_init(void)
     rf69_setMode(_mode);
 
     // Zero version number, RFM probably not connected/functioning
-    if(!rf69_spiRead(RFM69_REG_10_VERSION))
+    if(rf69_spiRead(RFM69_REG_10_VERSION != 0x24))
+    {
+        PORTA |= _BV(7);
         return false;
+    } else {
+        PORTA &- ~_BV(7);
+    }
 
     return true;
 }
@@ -314,10 +319,6 @@ void rf69_send(const uint8_t* data, uint8_t len, uint8_t power)
     uint8_t a = rf69_spiRead(RFM69_REG_28_IRQ_FLAGS2);
     while(!(a & RF_IRQFLAGS2_PACKETSENT))
     {
-        if(a == 0x08)
-            PORTA |= _BV(7);
-        else
-            PORTA &= ~_BV(7);
         a = rf69_spiRead(RFM69_REG_28_IRQ_FLAGS2);
     }
 
