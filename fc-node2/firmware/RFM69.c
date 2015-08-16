@@ -57,8 +57,10 @@ bool rf69_init(void)
     _mode = RFM69_MODE_RX;
     rf69_setMode(_mode);
 
+    _delay_ms(5);
+
     // Zero version number, RFM probably not connected/functioning
-    if(rf69_spiRead(RFM69_REG_10_VERSION != 0x24))
+    if(rf69_spiRead(RFM69_REG_10_VERSION) != 0x24)
     {
         PORTA |= _BV(7);
         return false;
@@ -89,18 +91,17 @@ uint8_t spi_bb_xfer(const uint8_t out)
             SPI_PORT |= SPI_MOSI;
         else
             SPI_PORT &= ~SPI_MOSI;
-        _delay_us(1);
         // Clock high 
         SPI_PORT |= SPI_SCK;
-        _delay_us(50);
-        // Drop clock 
-        SPI_PORT &= ~SPI_SCK;
         _delay_us(1);
         // Read MISO 
         if(SPI_INPORT & SPI_MISO)
             data |= _BV(i);
         else
             data &= ~_BV(i);
+        // Drop clock 
+        SPI_PORT &= ~SPI_SCK;
+        _delay_us(1);
     }
     _delay_us(1);
 
