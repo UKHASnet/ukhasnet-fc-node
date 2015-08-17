@@ -48,11 +48,12 @@ int main()
     rf69_setMode(RFM69_MODE_SLEEP);
 
     /* All periphs off */
-    //PRR |= _BV(PRTIM0) | _BV(PRUSI) | _BV(PRADC);
+    PRR |= _BV(PRTIM0) | _BV(PRUSI) | _BV(PRADC);
 
     while(1)
     {
-        /*
+        rf69_send((uint8_t*)testpacket, strlen(testpacket), 10); 
+
         // Interrupt on INT0 low level
         MCUCR &= ~(_BV(ISC01) | _BV(ISC00));
         GIMSK |= _BV(INT0);
@@ -67,12 +68,9 @@ int main()
         cli();
         GIMSK = 0x00;
         sleep_disable();
-        */
-
-        /*if(rf_init_ok)*/
-        _delay_ms(200);
-        rf69_send((uint8_t*)testpacket, strlen(testpacket), 2); 
-        _delay_ms(1000);
+        
+        // Wait for cap to recharge
+        _delay_ms(10);
     }
 
     return 0;
