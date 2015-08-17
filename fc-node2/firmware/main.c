@@ -20,7 +20,7 @@
 // Node configuration options
 #define NODE_ID     "JF0"
 #define HOPS        "2"
-#define WAKE_FREQ    3
+#define WAKE_FREQ    1
 
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
 #define REG_ENABLE() do { EN_DDR &= ~_BV(EN_PIN); } while(0)
@@ -32,7 +32,7 @@
 static char seqid = 'a';
 
 // How many times have we woken up?
-static uint8_t wakes = 3;
+static uint8_t wakes = 1;
 
 static char packetbuf[64];
 static char* p;
@@ -58,7 +58,6 @@ int main()
 
     /* Enable and configure RFM69 */
     rf69_init();
-
     rf69_setMode(RFM69_MODE_SLEEP);
 
     /* All periphs off */
@@ -74,7 +73,8 @@ int main()
             strcpy(p, HOPS);
             p += strlen(p);
             // Add seqid
-            *p++ = seqid;
+            sprintf(p, "%c", seqid);
+            p += strlen(p);
             // Add temperature
             strcpy(p, dummytemp);
             p += strlen(p);
@@ -83,16 +83,33 @@ int main()
             strcpy(p, NODE_ID);
             p += strlen(p);
             *p++ = ']';
+            // Null terminate
+            *p = '\0';
+
             // Send the packet
             rf69_send((uint8_t*)packetbuf, strlen(packetbuf), 10); 
-            _delay_ms(3);
+            // Delay to allow the cap to recharge a bit extra after tx,
+            // since it takes a little while after rf69_send() exits
+            // for the PA to fully turn off and stop drawing current
+            _delay_ms(30);
+
+            // Reset the number of wakes
             wakes = 1;
-            seqid++;
+
+            // Increase the sequence ID for the next time we enter here
+            if(seqid == 'z')
+                seqid = 'b';
+            else
+                seqid++;
+
+            // clear mcusr
+            MCUSR &= ~_BV(6);
         }
         else
         {
             wakes++;
         }
+
 
         // Interrupt on INT0 low level
         MCUCR &= ~(_BV(ISC01) | _BV(ISC00));
@@ -108,17 +125,38 @@ int main()
         cli();
         GIMSK = 0x00;
         sleep_disable();
+
+
+        /*
+        // Enable the watchdog and sleep for 8 seconds
+        wdt_enable(WDTO_8S);
+        WDTCSR |= (1 << WDIE);
+        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+        sleep_enable();
+        sei();
+        sleep_cpu();
+        sleep_disable();
+
+        */
         
         // Wait for cap to recharge
-        _delay_ms(5);
+        _delay_ms(50);
     }
 
     return 0;
 }
 
 /* turn on reg */
-ISR(INT0_vect)
+ISR(EXT_INT0_vect)
 {
     // Voltage low, enable the reg
     REG_ENABLE();
+}
+
+/**
+ *  * Watchdog interrupt
+ *   */
+ISR(WATCHDOG_vect)
+{
+    wdt_disable();
 }
