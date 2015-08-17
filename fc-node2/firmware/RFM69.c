@@ -61,12 +61,7 @@ bool rf69_init(void)
 
     // Zero version number, RFM probably not connected/functioning
     if(rf69_spiRead(RFM69_REG_10_VERSION) != 0x24)
-    {
-        PORTA |= _BV(7);
         return false;
-    } else {
-        PORTA &- ~_BV(7);
-    }
 
     return true;
 }

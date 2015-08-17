@@ -12,7 +12,7 @@
 # FUSES ........ Parameters for avrdude to flash the fuses appropriately.
 
 DEVICE     = t44
-CLOCK      = 1000000
+CLOCK      = 1000000UL
 PROGRAMMER = -c avrispmkII -P usb -B 10
 SOURCES	   = $(wildcard *.c)
 FUSES      = -U hfuse:w:0xdf:m -U lfuse:w:0x62:m

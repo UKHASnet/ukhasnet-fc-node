@@ -17,13 +17,27 @@
 #define EN_DDR DDRA
 #define EN_PIN 3
 
+// Node configuration options
+#define NODE_ID     "JF0"
+#define HOPS        "2"
+#define WAKE_FREQ    3
+
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
 #define REG_ENABLE() do { EN_DDR &= ~_BV(EN_PIN); } while(0)
 
 /** Disable the reg by driving low */
 #define REG_DISABLE() do { EN_DDR |= _BV(EN_PIN); } while(0)
 
-char testpacket[] = "2aT25.6H35[JF0]";
+// Starting seqid
+static char seqid = 'a';
+
+// How many times have we woken up?
+static uint8_t wakes = 3;
+
+static char packetbuf[64];
+static char* p;
+
+static char dummytemp[] = "T25.0";
 
 int main()
 {
@@ -52,7 +66,33 @@ int main()
 
     while(1)
     {
-        rf69_send((uint8_t*)testpacket, strlen(testpacket), 10); 
+        if(wakes == WAKE_FREQ)
+        {
+            // Construct and send the packet
+            p = packetbuf;
+            // Add number of hops
+            strcpy(p, HOPS);
+            p += strlen(p);
+            // Add seqid
+            *p++ = seqid;
+            // Add temperature
+            strcpy(p, dummytemp);
+            p += strlen(p);
+            // Add node ID in []
+            *p++ = '[';
+            strcpy(p, NODE_ID);
+            p += strlen(p);
+            *p++ = ']';
+            // Send the packet
+            rf69_send((uint8_t*)packetbuf, strlen(packetbuf), 10); 
+            _delay_ms(3);
+            wakes = 1;
+            seqid++;
+        }
+        else
+        {
+            wakes++;
+        }
 
         // Interrupt on INT0 low level
         MCUCR &= ~(_BV(ISC01) | _BV(ISC00));
@@ -70,7 +110,7 @@ int main()
         sleep_disable();
         
         // Wait for cap to recharge
-        _delay_ms(10);
+        _delay_ms(5);
     }
 
     return 0;
