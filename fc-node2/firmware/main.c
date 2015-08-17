@@ -91,7 +91,7 @@ int main()
             // Delay to allow the cap to recharge a bit extra after tx,
             // since it takes a little while after rf69_send() exits
             // for the PA to fully turn off and stop drawing current
-            _delay_ms(30);
+            _delay_ms(5);
 
             // Reset the number of wakes
             wakes = 1;
@@ -101,9 +101,6 @@ int main()
                 seqid = 'b';
             else
                 seqid++;
-
-            // clear mcusr
-            MCUSR &= ~_BV(6);
         }
         else
         {
@@ -140,7 +137,7 @@ int main()
         */
         
         // Wait for cap to recharge
-        _delay_ms(50);
+        _delay_ms(5);
     }
 
     return 0;
