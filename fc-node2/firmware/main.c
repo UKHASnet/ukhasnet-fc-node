@@ -37,7 +37,8 @@ static uint8_t wakes = 1;
 static char packetbuf[64];
 static char* p;
 
-static char dummytemp[] = "T25.0";
+// Get the voltage on the battery terminals in mV
+uint16_t get_batt_voltage(void);
 
 int main()
 {
@@ -75,8 +76,8 @@ int main()
             // Add seqid
             sprintf(p, "%c", seqid);
             p += strlen(p);
-            // Add temperature
-            strcpy(p, dummytemp);
+            // Add voltage
+            sprintf(p, "V%u", get_batt_voltage());
             p += strlen(p);
             // Add node ID in []
             *p++ = '[';
@@ -107,7 +108,6 @@ int main()
             wakes++;
         }
 
-
         // Interrupt on INT0 low level
         MCUCR &= ~(_BV(ISC01) | _BV(ISC00));
         GIMSK |= _BV(INT0);
@@ -123,7 +123,6 @@ int main()
         GIMSK = 0x00;
         sleep_disable();
 
-
         /*
         // Enable the watchdog and sleep for 8 seconds
         wdt_enable(WDTO_8S);
@@ -133,14 +132,45 @@ int main()
         sei();
         sleep_cpu();
         sleep_disable();
-
         */
-        
+
         // Wait for cap to recharge
         _delay_ms(5);
     }
 
     return 0;
+}
+
+/**
+ * Return the battery voltage (PA0/ADC0) in mV
+ * @returns The voltage in millivolts
+ */
+uint16_t get_batt_voltage(void)
+{
+    uint32_t r;
+
+    // Power up ADC
+    PRR &= ~_BV(PRADC);
+
+    // Channel 0 selected as default
+    // VCC is default reference
+    // Use a /8 prescaler to get 125kHz ADC clock from 1MHz core
+    ADCSRA |= _BV(ADPS1) | _BV(ADPS0);
+
+    // Enable ADC and start conversion
+    ADCSRA |= _BV(ADEN) | _BV(ADSC);
+
+    // Wait until done
+    while(!(ADCSRA & _BV(ADIF)));
+
+    // Get result
+    r = (uint32_t)ADC;
+
+    // Kill ADC
+    ADCSRA &= ~_BV(ADEN);
+    PRR |= _BV(PRADC);
+
+    return (uint16_t)((r*3300)/1024);
 }
 
 /* turn on reg */
