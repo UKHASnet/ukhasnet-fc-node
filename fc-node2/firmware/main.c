@@ -20,7 +20,7 @@
 // Node configuration options
 #define NODE_ID     "JF0"
 #define HOPS        "2"
-#define WAKE_FREQ    5
+#define WAKE_FREQ    10
 
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
 #define REG_ENABLE() do { EN_DDR &= ~_BV(EN_PIN); } while(0)
