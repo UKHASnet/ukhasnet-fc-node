@@ -20,7 +20,7 @@
 // Node configuration options
 #define NODE_ID     "JF0"
 #define HOPS        "2"
-#define WAKE_FREQ    10
+#define WAKE_FREQ    5
 
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
 #define REG_ENABLE() do { EN_DDR &= ~_BV(EN_PIN); } while(0)
@@ -92,7 +92,7 @@ int main()
             // Delay to allow the cap to recharge a bit extra after tx,
             // since it takes a little while after rf69_send() exits
             // for the PA to fully turn off and stop drawing current
-            _delay_ms(5);
+            _delay_ms(10);
 
             // Reset the number of wakes
             wakes = 1;
@@ -133,9 +133,12 @@ int main()
         sleep_cpu();
         sleep_disable();
         */
+        
+        // Wait until voltage detector says we're OK
+        /*while((PINB & _BV(2)) == 0);*/
 
-        // Wait for cap to recharge
-        _delay_ms(5);
+        // then wait a little longer to make sure the cap is charged
+        _delay_ms(50);
     }
 
     return 0;
