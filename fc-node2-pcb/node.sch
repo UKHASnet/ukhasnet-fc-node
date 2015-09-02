@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16293,6 +16293,9 @@ DIN A4, landscape with extra doc field</description>
 <part name="FRAME1" library="frames" deviceset="DINA4_L" device=""/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0603"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="R0603"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="R0603"/>
+<part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16333,6 +16336,9 @@ DIN A4, landscape with extra doc field</description>
 <instance part="FRAME1" gate="G$2" x="121.92" y="-101.6"/>
 <instance part="C3" gate="G$1" x="-7.62" y="-43.18"/>
 <instance part="R4" gate="G$1" x="129.54" y="-7.62" rot="R90"/>
+<instance part="R5" gate="G$1" x="101.6" y="-2.54" rot="R90"/>
+<instance part="R6" gate="G$1" x="101.6" y="-15.24" rot="R90"/>
+<instance part="GND9" gate="1" x="101.6" y="-25.4"/>
 </instances>
 <busses>
 </busses>
@@ -16395,6 +16401,11 @@ DIN A4, landscape with extra doc field</description>
 <pinref part="IC1" gate="G$1" pin="GND"/>
 <pinref part="GND8" gate="1" pin="GND"/>
 <wire x1="114.3" y1="-63.5" x2="114.3" y2="-66.04" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R6" gate="G$1" pin="1"/>
+<pinref part="GND9" gate="1" pin="GND"/>
+<wire x1="101.6" y1="-20.32" x2="101.6" y2="-22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -16559,9 +16570,10 @@ DIN A4, landscape with extra doc field</description>
 <label x="5.08" y="10.16" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT0/AREF/ADC0)PA0"/>
-<wire x1="45.72" y1="-60.96" x2="48.26" y2="-60.96" width="0.1524" layer="91"/>
-<label x="48.26" y="-60.96" size="1.27" layer="95" xref="yes"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="101.6" y1="2.54" x2="101.6" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="5.08" x2="101.6" y2="5.08" width="0.1524" layer="91"/>
+<label x="104.14" y="5.08" size="1.27" layer="95" font="fixed" xref="yes"/>
 </segment>
 </net>
 <net name="RFM_SS" class="0">
@@ -16657,6 +16669,21 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="U$4" gate="A" pin="RESET"/>
 <wire x1="152.4" y1="53.34" x2="149.86" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="VSENSE" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="(PCINT0/AREF/ADC0)PA0"/>
+<wire x1="45.72" y1="-60.96" x2="48.26" y2="-60.96" width="0.1524" layer="91"/>
+<label x="48.26" y="-60.96" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="R6" gate="G$1" pin="2"/>
+<wire x1="101.6" y1="-7.62" x2="101.6" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-7.62" x2="109.22" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="101.6" y="-7.62"/>
+<label x="109.22" y="-7.62" size="1.27" layer="95" font="fixed" xref="yes"/>
 </segment>
 </net>
 </nets>
