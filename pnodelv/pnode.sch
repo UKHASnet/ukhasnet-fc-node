@@ -3044,12 +3044,12 @@ DIN A4, landscape with extra doc field</description>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="Mine" deviceset="M02" device="PTH"/>
-<part name="R9" library="passives-7351" deviceset="RESISTOR" device="0603-N" value="1M"/>
-<part name="R10" library="passives-7351" deviceset="RESISTOR" device="0603-N" value="1M"/>
+<part name="R9" library="passives-7351" deviceset="RESISTOR" device="0603-N" value="976k"/>
+<part name="R10" library="passives-7351" deviceset="RESISTOR" device="0603-N" value="562k"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="C3" library="passives-7351" deviceset="CAPACITOR" device="0603-N" value="4.7u"/>
 <part name="C10" library="passives-7351" deviceset="CAPACITOR" device="0603-N" value="10u"/>
-<part name="U$4" library="jonsowman" deviceset="BOURNS_SDE0403A" device="" value="4.7u"/>
+<part name="L6" library="jonsowman" deviceset="BOURNS_SDE0403A" device="" value="4.7u"/>
 </parts>
 <sheets>
 <sheet>
@@ -3154,7 +3154,7 @@ DIN A4, landscape with extra doc field</description>
 <instance part="GND20" gate="1" x="38.1" y="86.36"/>
 <instance part="C3" gate="G$1" x="5.08" y="104.14"/>
 <instance part="C10" gate="G$1" x="43.18" y="111.76"/>
-<instance part="U$4" gate="G$1" x="10.16" y="124.46"/>
+<instance part="L6" gate="G$1" x="10.16" y="124.46"/>
 </instances>
 <busses>
 </busses>
@@ -3500,7 +3500,7 @@ DIN A4, landscape with extra doc field</description>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="5.08" y1="109.22" x2="5.08" y2="106.68" width="0.1524" layer="91"/>
 <junction x="5.08" y="109.22"/>
-<pinref part="U$4" gate="G$1" pin="P$1"/>
+<pinref part="L6" gate="G$1" pin="P$1"/>
 <wire x1="2.54" y1="124.46" x2="2.54" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="116.84" x2="5.08" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="116.84" x2="5.08" y2="114.3" width="0.1524" layer="91"/>
@@ -3645,7 +3645,7 @@ DIN A4, landscape with extra doc field</description>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="U$4" gate="G$1" pin="P$2"/>
+<pinref part="L6" gate="G$1" pin="P$2"/>
 <pinref part="U$2" gate="G$1" pin="SW"/>
 <wire x1="17.78" y1="124.46" x2="20.32" y2="124.46" width="0.1524" layer="91"/>
 </segment>
