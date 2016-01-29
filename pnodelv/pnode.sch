@@ -1993,6 +1993,92 @@ MAX3223-MAX3243.pdf</description>
 <circle x="0" y="0" radius="2.85" width="0.1524" layer="21"/>
 <pad name="B5,5" x="0" y="0" drill="5.5" diameter="9"/>
 </package>
+<package name="SWD_PTH_SHROUD">
+<wire x1="-2.6" y1="2.54" x2="2.6" y2="2.54" width="0.127" layer="51"/>
+<wire x1="2.6" y1="2.54" x2="2.6" y2="1.75" width="0.127" layer="51"/>
+<wire x1="2.6" y1="1.75" x2="3.135" y2="1.75" width="0.127" layer="51"/>
+<wire x1="3.135" y1="1.75" x2="3.135" y2="-1.75" width="0.127" layer="51"/>
+<wire x1="3.135" y1="-1.75" x2="2.54" y2="-1.75" width="0.127" layer="51"/>
+<wire x1="2.54" y1="-1.75" x2="2.54" y2="-2.54" width="0.127" layer="51"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.127" layer="51"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="-1.75" width="0.127" layer="51"/>
+<wire x1="-2.54" y1="-1.75" x2="-3.135" y2="-1.75" width="0.127" layer="51"/>
+<wire x1="-3.135" y1="-1.75" x2="-3.135" y2="1.75" width="0.127" layer="51"/>
+<wire x1="-3.135" y1="1.75" x2="-2.6" y2="1.75" width="0.127" layer="51"/>
+<wire x1="-2.6" y1="1.75" x2="-2.6" y2="2.54" width="0.127" layer="51"/>
+<pad name="6" x="0" y="0.635" drill="0.6" shape="octagon"/>
+<pad name="5" x="0" y="-0.635" drill="0.6" shape="octagon"/>
+<pad name="8" x="1.27" y="0.635" drill="0.6" shape="octagon"/>
+<pad name="7" x="1.27" y="-0.635" drill="0.6" shape="octagon"/>
+<pad name="10" x="2.54" y="0.635" drill="0.6" shape="octagon"/>
+<pad name="9" x="2.54" y="-0.635" drill="0.6" shape="octagon"/>
+<pad name="4" x="-1.27" y="0.635" drill="0.6" shape="octagon"/>
+<pad name="2" x="-2.54" y="0.635" drill="0.6" shape="octagon"/>
+<pad name="3" x="-1.27" y="-0.635" drill="0.6" shape="octagon"/>
+<pad name="1" x="-2.54" y="-0.635" drill="0.6" shape="octagon"/>
+<wire x1="-0.9" y1="-2.5" x2="-0.9" y2="-2.1" width="0.127" layer="51"/>
+<wire x1="-0.9" y1="-2.1" x2="0.9" y2="-2.1" width="0.127" layer="51"/>
+<wire x1="0.9" y1="-2.1" x2="0.9" y2="-2.5" width="0.127" layer="51"/>
+<wire x1="-2.6" y1="1.75" x2="-3.15" y2="1.75" width="0.127" layer="21"/>
+<wire x1="-3.15" y1="1.75" x2="-3.15" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="-3.15" y1="-1.75" x2="-2.55" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="-2.55" y1="-1.75" x2="-2.55" y2="-2.55" width="0.127" layer="21"/>
+<wire x1="-2.55" y1="-2.55" x2="-0.9" y2="-2.55" width="0.127" layer="21"/>
+<wire x1="-0.9" y1="-2.55" x2="0.9" y2="-2.55" width="0.127" layer="21"/>
+<wire x1="0.9" y1="-2.55" x2="2.55" y2="-2.55" width="0.127" layer="21"/>
+<wire x1="2.55" y1="-2.55" x2="2.55" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="2.55" y1="-1.75" x2="3.15" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="3.15" y1="-1.75" x2="3.15" y2="1.75" width="0.127" layer="21"/>
+<wire x1="3.15" y1="1.75" x2="2.6" y2="1.75" width="0.127" layer="21"/>
+<wire x1="2.6" y1="1.75" x2="2.6" y2="2.55" width="0.127" layer="21"/>
+<wire x1="2.6" y1="2.55" x2="-2.6" y2="2.55" width="0.127" layer="21"/>
+<wire x1="-2.6" y1="2.55" x2="-2.6" y2="1.75" width="0.127" layer="21"/>
+<wire x1="-0.9" y1="-2.55" x2="-0.9" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="-0.9" y1="-2.1" x2="0.9" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="0.9" y1="-2.1" x2="0.9" y2="-2.55" width="0.127" layer="21"/>
+<wire x1="-5.27" y1="1.525" x2="-3.2" y2="1.525" width="0.127" layer="51"/>
+<wire x1="3.2" y1="1.525" x2="5.27" y2="1.525" width="0.127" layer="51"/>
+<wire x1="5.27" y1="1.525" x2="5.27" y2="-1.525" width="0.127" layer="51"/>
+<wire x1="5.27" y1="-1.525" x2="3.2" y2="-1.525" width="0.127" layer="51"/>
+<wire x1="-3.2" y1="-1.525" x2="-5.27" y2="-1.525" width="0.127" layer="51"/>
+<wire x1="-5.27" y1="-1.525" x2="-5.27" y2="1.525" width="0.127" layer="51"/>
+</package>
+<package name="SWD_SMD_SHROUD">
+<wire x1="-2.6" y1="2.54" x2="2.6" y2="2.54" width="0.127" layer="51"/>
+<wire x1="2.6" y1="2.54" x2="2.6" y2="1.75" width="0.127" layer="51"/>
+<wire x1="2.6" y1="1.75" x2="3.135" y2="1.75" width="0.127" layer="51"/>
+<wire x1="3.135" y1="1.75" x2="3.135" y2="-1.75" width="0.127" layer="51"/>
+<wire x1="3.135" y1="-1.75" x2="2.54" y2="-1.75" width="0.127" layer="51"/>
+<wire x1="2.54" y1="-1.75" x2="2.54" y2="-2.54" width="0.127" layer="51"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.127" layer="51"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="-1.75" width="0.127" layer="51"/>
+<wire x1="-2.54" y1="-1.75" x2="-3.135" y2="-1.75" width="0.127" layer="51"/>
+<wire x1="-3.135" y1="-1.75" x2="-3.135" y2="1.75" width="0.127" layer="51"/>
+<wire x1="-3.135" y1="1.75" x2="-2.6" y2="1.75" width="0.127" layer="51"/>
+<wire x1="-2.6" y1="1.75" x2="-2.6" y2="2.54" width="0.127" layer="51"/>
+<wire x1="-0.9" y1="-2.5" x2="-0.9" y2="-2.1" width="0.127" layer="51"/>
+<wire x1="-0.9" y1="-2.1" x2="0.9" y2="-2.1" width="0.127" layer="51"/>
+<wire x1="0.9" y1="-2.1" x2="0.9" y2="-2.5" width="0.127" layer="51"/>
+<wire x1="-3.404" y1="1.75" x2="-3.404" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="3.404" y1="-1.75" x2="3.404" y2="1.75" width="0.127" layer="21"/>
+<wire x1="-5.27" y1="1.525" x2="-3.2" y2="1.525" width="0.127" layer="51"/>
+<wire x1="3.2" y1="1.525" x2="5.27" y2="1.525" width="0.127" layer="51"/>
+<wire x1="5.27" y1="1.525" x2="5.27" y2="-1.525" width="0.127" layer="51"/>
+<wire x1="5.27" y1="-1.525" x2="3.2" y2="-1.525" width="0.127" layer="51"/>
+<wire x1="-3.2" y1="-1.525" x2="-5.27" y2="-1.525" width="0.127" layer="51"/>
+<wire x1="-5.27" y1="-1.525" x2="-5.27" y2="1.525" width="0.127" layer="51"/>
+<smd name="1" x="-2.54" y="-1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="3" x="-1.27" y="-1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="5" x="0" y="-1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="7" x="1.27" y="-1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="9" x="2.54" y="-1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="10" x="2.54" y="1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="8" x="1.27" y="1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="6" x="0" y="1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="4" x="-1.27" y="1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<smd name="2" x="-2.54" y="1.905" dx="3.048" dy="0.9144" layer="1" roundness="29" rot="R90"/>
+<circle x="-3.81" y="-2.54" radius="0.254" width="0.4064" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="STM32F0-20">
@@ -2055,6 +2141,23 @@ MAX3223-MAX3243.pdf</description>
 <text x="2.794" y="0.5842" size="1.778" layer="95">&gt;NAME</text>
 <text x="2.794" y="-2.4638" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="MOUNT" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="SWD_10PIN">
+<pin name="SWDAT" x="15.24" y="5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="SWCLK" x="15.24" y="2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="SWO" x="15.24" y="0" visible="pin" length="middle" rot="R180"/>
+<pin name="NC" x="15.24" y="-2.54" visible="pin" length="middle" direction="nc" rot="R180"/>
+<pin name="NRST" x="15.24" y="-5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="GNDD" x="-15.24" y="-5.08" visible="pin" length="middle" direction="pwr"/>
+<pin name="KEY" x="-15.24" y="-2.54" visible="pin" length="middle"/>
+<pin name="GND2" x="-15.24" y="0" visible="pin" length="middle" direction="pwr"/>
+<pin name="GND1" x="-15.24" y="2.54" visible="pin" length="middle" direction="pwr"/>
+<pin name="VCC" x="-15.24" y="5.08" visible="pin" length="middle" direction="pwr"/>
+<wire x1="-10.16" y1="7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="-10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
+<text x="-2.794" y="8.382" size="1.778" layer="95">SWD</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -2173,6 +2276,47 @@ MAX3223-MAX3243.pdf</description>
 <device name="5.5" package="5,5-PAD">
 <connects>
 <connect gate="G$1" pin="MOUNT" pad="B5,5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SWD_SHROUD" prefix="J">
+<gates>
+<gate name="G$1" symbol="SWD_10PIN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SWD_PTH_SHROUD">
+<connects>
+<connect gate="G$1" pin="GND1" pad="3"/>
+<connect gate="G$1" pin="GND2" pad="5"/>
+<connect gate="G$1" pin="GNDD" pad="9"/>
+<connect gate="G$1" pin="KEY" pad="7"/>
+<connect gate="G$1" pin="NC" pad="8"/>
+<connect gate="G$1" pin="NRST" pad="10"/>
+<connect gate="G$1" pin="SWCLK" pad="4"/>
+<connect gate="G$1" pin="SWDAT" pad="2"/>
+<connect gate="G$1" pin="SWO" pad="6"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_SMD" package="SWD_SMD_SHROUD">
+<connects>
+<connect gate="G$1" pin="GND1" pad="3"/>
+<connect gate="G$1" pin="GND2" pad="5"/>
+<connect gate="G$1" pin="GNDD" pad="9"/>
+<connect gate="G$1" pin="KEY" pad="7"/>
+<connect gate="G$1" pin="NC" pad="8"/>
+<connect gate="G$1" pin="NRST" pad="10"/>
+<connect gate="G$1" pin="SWCLK" pad="4"/>
+<connect gate="G$1" pin="SWDAT" pad="2"/>
+<connect gate="G$1" pin="SWO" pad="6"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -2635,56 +2779,6 @@ MAX3223-MAX3243.pdf</description>
 <library name="jonsowman">
 <description>Jon Sowman - Eagle Library</description>
 <packages>
-<package name="SWD_PTH_SHROUD">
-<wire x1="-2.6" y1="2.54" x2="2.6" y2="2.54" width="0.127" layer="51"/>
-<wire x1="2.6" y1="2.54" x2="2.6" y2="1.75" width="0.127" layer="51"/>
-<wire x1="2.6" y1="1.75" x2="3.135" y2="1.75" width="0.127" layer="51"/>
-<wire x1="3.135" y1="1.75" x2="3.135" y2="-1.75" width="0.127" layer="51"/>
-<wire x1="3.135" y1="-1.75" x2="2.54" y2="-1.75" width="0.127" layer="51"/>
-<wire x1="2.54" y1="-1.75" x2="2.54" y2="-2.54" width="0.127" layer="51"/>
-<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.127" layer="51"/>
-<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="-1.75" width="0.127" layer="51"/>
-<wire x1="-2.54" y1="-1.75" x2="-3.135" y2="-1.75" width="0.127" layer="51"/>
-<wire x1="-3.135" y1="-1.75" x2="-3.135" y2="1.75" width="0.127" layer="51"/>
-<wire x1="-3.135" y1="1.75" x2="-2.6" y2="1.75" width="0.127" layer="51"/>
-<wire x1="-2.6" y1="1.75" x2="-2.6" y2="2.54" width="0.127" layer="51"/>
-<pad name="6" x="0" y="0.635" drill="0.6" shape="octagon"/>
-<pad name="5" x="0" y="-0.635" drill="0.6" shape="octagon"/>
-<pad name="8" x="1.27" y="0.635" drill="0.6" shape="octagon"/>
-<pad name="7" x="1.27" y="-0.635" drill="0.6" shape="octagon"/>
-<pad name="10" x="2.54" y="0.635" drill="0.6" shape="octagon"/>
-<pad name="9" x="2.54" y="-0.635" drill="0.6" shape="octagon"/>
-<pad name="4" x="-1.27" y="0.635" drill="0.6" shape="octagon"/>
-<pad name="2" x="-2.54" y="0.635" drill="0.6" shape="octagon"/>
-<pad name="3" x="-1.27" y="-0.635" drill="0.6" shape="octagon"/>
-<pad name="1" x="-2.54" y="-0.635" drill="0.6" shape="octagon"/>
-<wire x1="-0.9" y1="-2.5" x2="-0.9" y2="-2.1" width="0.127" layer="51"/>
-<wire x1="-0.9" y1="-2.1" x2="0.9" y2="-2.1" width="0.127" layer="51"/>
-<wire x1="0.9" y1="-2.1" x2="0.9" y2="-2.5" width="0.127" layer="51"/>
-<wire x1="-2.6" y1="1.75" x2="-3.15" y2="1.75" width="0.127" layer="21"/>
-<wire x1="-3.15" y1="1.75" x2="-3.15" y2="-1.75" width="0.127" layer="21"/>
-<wire x1="-3.15" y1="-1.75" x2="-2.55" y2="-1.75" width="0.127" layer="21"/>
-<wire x1="-2.55" y1="-1.75" x2="-2.55" y2="-2.55" width="0.127" layer="21"/>
-<wire x1="-2.55" y1="-2.55" x2="-0.9" y2="-2.55" width="0.127" layer="21"/>
-<wire x1="-0.9" y1="-2.55" x2="0.9" y2="-2.55" width="0.127" layer="21"/>
-<wire x1="0.9" y1="-2.55" x2="2.55" y2="-2.55" width="0.127" layer="21"/>
-<wire x1="2.55" y1="-2.55" x2="2.55" y2="-1.75" width="0.127" layer="21"/>
-<wire x1="2.55" y1="-1.75" x2="3.15" y2="-1.75" width="0.127" layer="21"/>
-<wire x1="3.15" y1="-1.75" x2="3.15" y2="1.75" width="0.127" layer="21"/>
-<wire x1="3.15" y1="1.75" x2="2.6" y2="1.75" width="0.127" layer="21"/>
-<wire x1="2.6" y1="1.75" x2="2.6" y2="2.55" width="0.127" layer="21"/>
-<wire x1="2.6" y1="2.55" x2="-2.6" y2="2.55" width="0.127" layer="21"/>
-<wire x1="-2.6" y1="2.55" x2="-2.6" y2="1.75" width="0.127" layer="21"/>
-<wire x1="-0.9" y1="-2.55" x2="-0.9" y2="-2.1" width="0.127" layer="21"/>
-<wire x1="-0.9" y1="-2.1" x2="0.9" y2="-2.1" width="0.127" layer="21"/>
-<wire x1="0.9" y1="-2.1" x2="0.9" y2="-2.55" width="0.127" layer="21"/>
-<wire x1="-5.27" y1="1.525" x2="-3.2" y2="1.525" width="0.127" layer="51"/>
-<wire x1="3.2" y1="1.525" x2="5.27" y2="1.525" width="0.127" layer="51"/>
-<wire x1="5.27" y1="1.525" x2="5.27" y2="-1.525" width="0.127" layer="51"/>
-<wire x1="5.27" y1="-1.525" x2="3.2" y2="-1.525" width="0.127" layer="51"/>
-<wire x1="-3.2" y1="-1.525" x2="-5.27" y2="-1.525" width="0.127" layer="51"/>
-<wire x1="-5.27" y1="-1.525" x2="-5.27" y2="1.525" width="0.127" layer="51"/>
-</package>
 <package name="13MM_DC_JACK">
 <wire x1="2.5" y1="-2.5" x2="-8.5" y2="-2.5" width="0.2032" layer="51"/>
 <wire x1="-8.5" y1="-2.5" x2="-8.5" y2="2.5" width="0.2032" layer="51"/>
@@ -2717,23 +2811,6 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 </package>
 </packages>
 <symbols>
-<symbol name="SWD_10PIN">
-<pin name="SWDAT" x="15.24" y="5.08" visible="pin" length="middle" rot="R180"/>
-<pin name="SWCLK" x="15.24" y="2.54" visible="pin" length="middle" rot="R180"/>
-<pin name="SWO" x="15.24" y="0" visible="pin" length="middle" rot="R180"/>
-<pin name="NC" x="15.24" y="-2.54" visible="pin" length="middle" direction="nc" rot="R180"/>
-<pin name="NRST" x="15.24" y="-5.08" visible="pin" length="middle" rot="R180"/>
-<pin name="GNDD" x="-15.24" y="-5.08" visible="pin" length="middle" direction="pwr"/>
-<pin name="KEY" x="-15.24" y="-2.54" visible="pin" length="middle"/>
-<pin name="GND2" x="-15.24" y="0" visible="pin" length="middle" direction="pwr"/>
-<pin name="GND1" x="-15.24" y="2.54" visible="pin" length="middle" direction="pwr"/>
-<pin name="VCC" x="-15.24" y="5.08" visible="pin" length="middle" direction="pwr"/>
-<wire x1="-10.16" y1="7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
-<wire x1="10.16" y1="7.62" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="10.16" y1="-7.62" x2="-10.16" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
-<text x="-2.794" y="8.382" size="1.778" layer="95">SWD</text>
-</symbol>
 <symbol name="13MM_DC_JACK">
 <wire x1="-2.54" y1="2.54" x2="-10.16" y2="2.54" width="1.27" layer="94"/>
 <wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
@@ -2770,30 +2847,6 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="SWD_PTH_SHROUD">
-<gates>
-<gate name="G$1" symbol="SWD_10PIN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SWD_PTH_SHROUD">
-<connects>
-<connect gate="G$1" pin="GND1" pad="3"/>
-<connect gate="G$1" pin="GND2" pad="5"/>
-<connect gate="G$1" pin="GNDD" pad="9"/>
-<connect gate="G$1" pin="KEY" pad="7"/>
-<connect gate="G$1" pin="NC" pad="8"/>
-<connect gate="G$1" pin="NRST" pad="10"/>
-<connect gate="G$1" pin="SWCLK" pad="4"/>
-<connect gate="G$1" pin="SWDAT" pad="2"/>
-<connect gate="G$1" pin="SWO" pad="6"/>
-<connect gate="G$1" pin="VCC" pad="1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="13MM_DC_JACK">
 <gates>
 <gate name="G$1" symbol="13MM_DC_JACK" x="0" y="0"/>
@@ -3014,7 +3067,6 @@ DIN A4, landscape with extra doc field</description>
 <part name="L1" library="passives-7351" deviceset="INDUCTOR" device="0603-N" value="120n"/>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
 <part name="STM32" library="dtb" deviceset="STM32F030F4" device=""/>
-<part name="U$3" library="jonsowman" deviceset="SWD_PTH_SHROUD" device=""/>
 <part name="+3V3" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
@@ -3050,6 +3102,7 @@ DIN A4, landscape with extra doc field</description>
 <part name="C3" library="passives-7351" deviceset="CAPACITOR" device="0603-N" value="4.7u"/>
 <part name="C10" library="passives-7351" deviceset="CAPACITOR" device="0603-N" value="10u"/>
 <part name="L6" library="jonsowman" deviceset="BOURNS_SDE0403A" device="" value="4.7u"/>
+<part name="J1" library="dtb" deviceset="SWD_SHROUD" device="_SMD"/>
 </parts>
 <sheets>
 <sheet>
@@ -3118,7 +3171,6 @@ DIN A4, landscape with extra doc field</description>
 <instance part="L1" gate="G$1" x="162.56" y="60.96" rot="R90"/>
 <instance part="+3V6" gate="G$1" x="203.2" y="129.54"/>
 <instance part="STM32" gate="G$1" x="10.16" y="43.18"/>
-<instance part="U$3" gate="G$1" x="27.94" y="-15.24"/>
 <instance part="+3V3" gate="G$1" x="10.16" y="-5.08"/>
 <instance part="GND3" gate="1" x="10.16" y="-25.4"/>
 <instance part="+3V4" gate="G$1" x="-5.08" y="38.1"/>
@@ -3155,6 +3207,7 @@ DIN A4, landscape with extra doc field</description>
 <instance part="C3" gate="G$1" x="5.08" y="104.14"/>
 <instance part="C10" gate="G$1" x="43.18" y="111.76"/>
 <instance part="L6" gate="G$1" x="10.16" y="124.46"/>
+<instance part="J1" gate="G$1" x="27.94" y="-15.24"/>
 </instances>
 <busses>
 </busses>
@@ -3205,22 +3258,22 @@ DIN A4, landscape with extra doc field</description>
 <wire x1="213.36" y1="116.84" x2="213.36" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="GND1"/>
 <wire x1="12.7" y1="-12.7" x2="10.16" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="GND2"/>
 <wire x1="12.7" y1="-15.24" x2="10.16" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="-12.7" x2="10.16" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="KEY"/>
 <wire x1="12.7" y1="-17.78" x2="10.16" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="-15.24" x2="10.16" y2="-17.78" width="0.1524" layer="91"/>
 <junction x="10.16" y="-15.24"/>
 <wire x1="10.16" y1="-17.78" x2="10.16" y2="-20.32" width="0.1524" layer="91"/>
 <junction x="10.16" y="-17.78"/>
-<pinref part="U$3" gate="G$1" pin="GNDD"/>
 <wire x1="10.16" y1="-20.32" x2="12.7" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="10.16" y1="-20.32" x2="10.16" y2="-22.86" width="0.1524" layer="91"/>
 <junction x="10.16" y="-20.32"/>
+<pinref part="J1" gate="G$1" pin="GNDD"/>
+<pinref part="J1" gate="G$1" pin="KEY"/>
+<pinref part="J1" gate="G$1" pin="GND2"/>
+<pinref part="J1" gate="G$1" pin="GND1"/>
 </segment>
 <segment>
 <pinref part="GND5" gate="1" pin="GND"/>
@@ -3332,8 +3385,8 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
 <wire x1="10.16" y1="-7.62" x2="10.16" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="VCC"/>
 <wire x1="10.16" y1="-10.16" x2="12.7" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
 <pinref part="STM32" gate="G$1" pin="VDD"/>
@@ -3508,9 +3561,9 @@ DIN A4, landscape with extra doc field</description>
 </net>
 <net name="SWDAT" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="SWDAT"/>
 <wire x1="43.18" y1="-10.16" x2="45.72" y2="-10.16" width="0.1524" layer="91"/>
 <label x="45.72" y="-10.16" size="1.27" layer="95" font="vector" xref="yes"/>
+<pinref part="J1" gate="G$1" pin="SWDAT"/>
 </segment>
 <segment>
 <pinref part="STM32" gate="G$1" pin="PA13"/>
@@ -3520,9 +3573,9 @@ DIN A4, landscape with extra doc field</description>
 </net>
 <net name="SWCLK" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="SWCLK"/>
 <wire x1="43.18" y1="-12.7" x2="45.72" y2="-12.7" width="0.1524" layer="91"/>
 <label x="45.72" y="-12.7" size="1.27" layer="95" font="vector" xref="yes"/>
+<pinref part="J1" gate="G$1" pin="SWCLK"/>
 </segment>
 <segment>
 <pinref part="STM32" gate="G$1" pin="PA14"/>
@@ -3532,9 +3585,9 @@ DIN A4, landscape with extra doc field</description>
 </net>
 <net name="NRST" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="NRST"/>
 <wire x1="43.18" y1="-20.32" x2="45.72" y2="-20.32" width="0.1524" layer="91"/>
 <label x="45.72" y="-20.32" size="1.27" layer="95" font="vector" xref="yes"/>
+<pinref part="J1" gate="G$1" pin="NRST"/>
 </segment>
 <segment>
 <pinref part="STM32" gate="G$1" pin="NRST"/>
