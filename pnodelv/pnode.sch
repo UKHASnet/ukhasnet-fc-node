@@ -2710,6 +2710,11 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <smd name="GND@2" x="0" y="0" dx="1.524" dy="4.064" layer="16"/>
 <smd name="GND@3" x="5.08" y="0" dx="1.524" dy="4.064" layer="16"/>
 </package>
+<package name="BOURNS_SDE0403A">
+<smd name="P$1" x="-1.625" y="0" dx="1.75" dy="4.5" layer="1"/>
+<smd name="P$2" x="1.625" y="0" dx="1.75" dy="4.5" layer="1"/>
+<circle x="0" y="0" radius="2.302171875" width="0.127" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SWD_10PIN">
@@ -2752,6 +2757,16 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <pin name="GND@1" x="-2.54" y="-7.62" visible="off" length="short"/>
 <pin name="GND@2" x="-2.54" y="-10.16" visible="off" length="short"/>
 <pin name="GND@3" x="-2.54" y="-12.7" visible="off" length="short"/>
+</symbol>
+<symbol name="INDUCTOR">
+<pin name="P$1" x="-7.62" y="0" visible="off" length="short"/>
+<wire x1="-5.08" y1="0" x2="-2.54" y2="0" width="0.254" layer="94" curve="-180"/>
+<wire x1="-2.54" y1="0" x2="0" y2="0" width="0.254" layer="94" curve="-180"/>
+<wire x1="0" y1="0" x2="2.54" y2="0" width="0.254" layer="94" curve="-180"/>
+<wire x1="2.54" y1="0" x2="5.08" y2="0" width="0.254" layer="94" curve="-180"/>
+<pin name="P$2" x="7.62" y="0" visible="off" length="short" rot="R180"/>
+<text x="-5.08" y="2.54" size="1.27" layer="96">&gt;VALUE</text>
+<text x="-5.08" y="-2.54" size="1.27" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -2810,6 +2825,22 @@ End launch SMA connector. The paste layer has been removed so that the connector
 <connect gate="1" pin="GND@2" pad="GND@2"/>
 <connect gate="1" pin="GND@3" pad="GND@3"/>
 <connect gate="1" pin="SIGNAL" pad="SIG"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BOURNS_SDE0403A">
+<gates>
+<gate name="G$1" symbol="INDUCTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BOURNS_SDE0403A">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -3018,6 +3049,7 @@ DIN A4, landscape with extra doc field</description>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="C3" library="passives-7351" deviceset="CAPACITOR" device="0603-N" value="4.7u"/>
 <part name="C10" library="passives-7351" deviceset="CAPACITOR" device="0603-N" value="10u"/>
+<part name="U$4" library="jonsowman" deviceset="BOURNS_SDE0403A" device="" value="4.7u"/>
 </parts>
 <sheets>
 <sheet>
@@ -3122,6 +3154,7 @@ DIN A4, landscape with extra doc field</description>
 <instance part="GND20" gate="1" x="38.1" y="86.36"/>
 <instance part="C3" gate="G$1" x="5.08" y="104.14"/>
 <instance part="C10" gate="G$1" x="43.18" y="111.76"/>
+<instance part="U$4" gate="G$1" x="10.16" y="124.46"/>
 </instances>
 <busses>
 </busses>
@@ -3243,6 +3276,7 @@ DIN A4, landscape with extra doc field</description>
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="-12.7" y1="111.76" x2="-12.7" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="GND"/>
@@ -3466,6 +3500,10 @@ DIN A4, landscape with extra doc field</description>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="5.08" y1="109.22" x2="5.08" y2="106.68" width="0.1524" layer="91"/>
 <junction x="5.08" y="109.22"/>
+<pinref part="U$4" gate="G$1" pin="P$1"/>
+<wire x1="2.54" y1="124.46" x2="2.54" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="116.84" x2="5.08" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="116.84" x2="5.08" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SWDAT" class="0">
@@ -3603,6 +3641,13 @@ DIN A4, landscape with extra doc field</description>
 <wire x1="38.1" y1="104.14" x2="35.56" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="104.14" x2="35.56" y2="109.22" width="0.1524" layer="91"/>
 <junction x="38.1" y="104.14"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="P$2"/>
+<pinref part="U$2" gate="G$1" pin="SW"/>
+<wire x1="17.78" y1="124.46" x2="20.32" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

@@ -127,6 +127,8 @@
 <text x="19.558" y="14.732" size="1.27" layer="21" font="vector" ratio="15">SOWMAN</text>
 <text x="18.542" y="13.208" size="1.27" layer="21" font="vector" ratio="15">Jan 2016</text>
 <text x="35.56" y="7.366" size="1.27" layer="21" font="vector" ratio="15">ukhas.net</text>
+<text x="37.846" y="18.542" size="1.27" layer="21" font="vector" ratio="15" rot="R90">SWD</text>
+<text x="42.164" y="0.508" size="1.27" layer="21" font="vector" ratio="15" rot="R90">3.5-6V</text>
 </plain>
 <libraries>
 <library name="Mine">
@@ -478,7 +480,7 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="dirt_cheap_dirty_boards.v1">
+<designrules name="dirt_cheap_dirty_boards.v1 *">
 <description language="en">&lt;b&gt;Dirty Cheap Dirty Board Design Rules&lt;/b&gt;
 &lt;br&gt;
 &lt;br&gt;Min width/Spacing: 5/5mil
@@ -545,7 +547,7 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
 <param name="checkGrid" value="0"/>
-<param name="checkAngle" value="0"/>
+<param name="checkAngle" value="1"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="0"/>
 <param name="useDiameter" value="13"/>
@@ -709,7 +711,7 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <element name="U$2" library="dtb" package="SOT23" value="MCP1700TT" x="31.242" y="2.54" smashed="yes" rot="R270">
 <attribute name="VALUE" x="28.067" y="4.445" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="U$3" library="jonsowman" package="SWD_PTH_SHROUD" value="SWD_PTH_SHROUD" x="33.02" y="20.32"/>
+<element name="U$3" library="jonsowman" package="SWD_PTH_SHROUD" value="SWD_PTH_SHROUD" x="33.02" y="20.066"/>
 <element name="U$1" library="jonsowman" package="13MM_DC_JACK" value="13MM_DC_JACKPTH" x="44.704" y="11.176" smashed="yes" rot="R180"/>
 <element name="R1" library="passives-7351" package="R0603-N" value="100R" x="39.116" y="13.462" smashed="yes" rot="R270">
 <attribute name="NAME" x="39.91290625" y="15.864921875" size="0.8128" layer="25" font="vector" ratio="13" rot="R180"/>
@@ -912,8 +914,6 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="19.342" y1="4.572" x2="20.574" y2="3.34" width="0.4064" layer="1"/>
 <wire x1="23.297" y1="11.8078" x2="23.297" y2="9.398" width="0.4064" layer="1"/>
 <wire x1="23.297" y1="9.398" x2="23.297" y2="5.9722" width="0.3048" layer="1"/>
-<wire x1="30.48" y1="19.685" x2="30.099" y2="19.685" width="0.4064" layer="1"/>
-<wire x1="30.099" y1="19.685" x2="28.956" y2="20.828" width="0.4064" layer="1"/>
 <wire x1="28.956" y1="20.828" x2="27.178" y2="20.828" width="0.4064" layer="1"/>
 <wire x1="27.178" y1="20.828" x2="25.146" y2="18.796" width="0.4064" layer="1"/>
 <wire x1="25.146" y1="18.796" x2="25.146" y2="16.764" width="0.4064" layer="1"/>
@@ -932,6 +932,8 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="25.146" y1="13.716" x2="23.876" y2="12.446" width="0.4064" layer="16"/>
 <wire x1="17.78" y1="13.208" x2="14.7149" y2="13.208" width="0.4064" layer="1"/>
 <wire x1="14.7149" y1="13.208" x2="13.0989" y2="14.824" width="0.4064" layer="1"/>
+<wire x1="30.48" y1="19.431" x2="30.353" y2="19.431" width="0.4064" layer="1"/>
+<wire x1="30.353" y1="19.431" x2="28.956" y2="20.828" width="0.4064" layer="1"/>
 </signal>
 <signal name="SCL">
 <contactref element="IC2" pad="6"/>
@@ -981,8 +983,6 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="12.573" y1="6.858" x2="12.319" y2="6.604" width="0.3048" layer="1"/>
 <wire x1="12.319" y1="6.604" x2="12.319" y2="4.953" width="0.3048" layer="1"/>
 <wire x1="12.319" y1="4.953" x2="12.954" y2="4.318" width="0.3048" layer="1"/>
-<wire x1="12.954" y1="4.318" x2="13.216" y2="4.318" width="0.254" layer="1"/>
-<wire x1="13.216" y1="4.318" x2="13.486" y2="4.302" width="0.3048" layer="1"/>
 <wire x1="17.3251" y1="16.824" x2="16.57" y2="16.824" width="0.3048" layer="1"/>
 <wire x1="16.57" y1="16.824" x2="16.256" y2="16.51" width="0.3048" layer="1"/>
 <wire x1="16.256" y1="16.51" x2="16.256" y2="14.478" width="0.3048" layer="1"/>
@@ -993,6 +993,8 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="18.034" y1="14.224" x2="18.542" y2="14.732" width="0.3048" layer="1"/>
 <wire x1="18.542" y1="14.732" x2="20.32" y2="14.732" width="0.3048" layer="1"/>
 <wire x1="20.32" y1="14.732" x2="20.828" y2="14.224" width="0.3048" layer="1"/>
+<wire x1="13.486" y1="4.302" x2="12.97" y2="4.302" width="0.3048" layer="1"/>
+<wire x1="12.97" y1="4.302" x2="12.954" y2="4.318" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$4">
 <contactref element="C8" pad="2"/>
@@ -1002,8 +1004,6 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="15.24" y1="11.976" x2="17.272" y2="11.976" width="0.4064" layer="1"/>
 <wire x1="15.24" y1="11.976" x2="14.948" y2="11.976" width="0.4064" layer="1"/>
 <wire x1="14.948" y1="11.976" x2="13.589" y2="13.335" width="0.4064" layer="1"/>
-<wire x1="11.43" y1="17.498" x2="12.418" y2="17.498" width="0.4064" layer="1"/>
-<wire x1="12.418" y1="17.498" x2="12.319" y2="17.526" width="0.4064" layer="1"/>
 <via x="12.319" y="17.526" extent="1-16" drill="0.381"/>
 <wire x1="12.319" y1="17.526" x2="12.319" y2="14.224" width="0.4064" layer="16"/>
 <via x="12.319" y="14.224" extent="1-16" drill="0.381"/>
@@ -1012,6 +1012,8 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="13.589" y1="13.335" x2="11.811" y2="13.335" width="0.4064" layer="1"/>
 <wire x1="11.811" y1="13.335" x2="11.43" y2="13.716" width="0.4064" layer="1"/>
 <wire x1="11.43" y1="13.716" x2="11.43" y2="14.506" width="0.4064" layer="1"/>
+<wire x1="11.43" y1="17.498" x2="12.291" y2="17.498" width="0.4064" layer="1"/>
+<wire x1="12.291" y1="17.498" x2="12.319" y2="17.526" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$7">
 <contactref element="C5" pad="2"/>
@@ -1068,8 +1070,6 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="32.512" y1="2.71" x2="33.02" y2="2.71" width="0.4064" layer="1"/>
 <wire x1="33.02" y1="2.71" x2="36" y2="2.71" width="0.4064" layer="1"/>
 <wire x1="36" y1="2.71" x2="36.592" y2="3.302" width="0.4064" layer="1"/>
-<wire x1="22.606" y1="1.74" x2="22.86" y2="1.524" width="0.4064" layer="1"/>
-<wire x1="22.86" y1="1.524" x2="23.876" y2="0.508" width="0.4064" layer="1"/>
 <wire x1="23.876" y1="0.508" x2="32.004" y2="0.508" width="0.4064" layer="1"/>
 <wire x1="32.004" y1="0.508" x2="32.512" y2="1.016" width="0.4064" layer="1"/>
 <wire x1="32.512" y1="1.016" x2="32.512" y2="2.37" width="0.4064" layer="1"/>
@@ -1077,6 +1077,8 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="32.512" y1="2.71" x2="32.342" y2="2.54" width="0.4064" layer="1"/>
 <wire x1="32.258" y1="6.82" x2="32.342" y2="6.82" width="0.4064" layer="1"/>
 <wire x1="32.342" y1="6.82" x2="32.342" y2="2.54" width="0.4064" layer="1"/>
+<wire x1="22.606" y1="1.74" x2="22.644" y2="1.74" width="0.4064" layer="1"/>
+<wire x1="22.644" y1="1.74" x2="23.876" y2="0.508" width="0.4064" layer="1"/>
 </signal>
 <signal name="SWDAT">
 <contactref element="U$3" pad="2"/>
@@ -1091,8 +1093,8 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="25.146" y1="16.002" x2="24.638" y2="16.51" width="0.3048" layer="1"/>
 <wire x1="24.638" y1="16.51" x2="24.638" y2="19.05" width="0.3048" layer="1"/>
 <wire x1="24.638" y1="19.05" x2="26.924" y2="21.336" width="0.3048" layer="1"/>
-<wire x1="26.924" y1="21.336" x2="30.099" y2="21.336" width="0.3048" layer="1"/>
-<wire x1="30.099" y1="21.336" x2="30.48" y2="20.955" width="0.3048" layer="1"/>
+<wire x1="26.924" y1="21.336" x2="29.845" y2="21.336" width="0.3048" layer="1"/>
+<wire x1="29.845" y1="21.336" x2="30.48" y2="20.701" width="0.3048" layer="1"/>
 </signal>
 <signal name="SWCLK">
 <contactref element="U$3" pad="4"/>
@@ -1105,7 +1107,7 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="24.13" y1="19.304" x2="26.67" y2="21.844" width="0.3048" layer="1"/>
 <wire x1="26.67" y1="21.844" x2="31.242" y2="21.844" width="0.3048" layer="1"/>
 <wire x1="31.242" y1="21.844" x2="31.75" y2="21.336" width="0.3048" layer="1"/>
-<wire x1="31.75" y1="21.336" x2="31.75" y2="20.955" width="0.3048" layer="1"/>
+<wire x1="31.75" y1="21.336" x2="31.75" y2="20.701" width="0.3048" layer="1"/>
 <wire x1="19.558" y1="13.462" x2="19.812" y2="13.462" width="0.254" layer="16"/>
 <wire x1="19.812" y1="13.462" x2="20.32" y2="13.97" width="0.3048" layer="16"/>
 <wire x1="20.32" y1="13.97" x2="21.336" y2="13.97" width="0.3048" layer="16"/>
@@ -1117,8 +1119,8 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <signal name="NRST">
 <contactref element="U$3" pad="10"/>
 <contactref element="STM32" pad="4"/>
-<wire x1="35.56" y1="20.955" x2="35.941" y2="20.955" width="0.3048" layer="1"/>
-<wire x1="35.941" y1="20.955" x2="36.576" y2="20.32" width="0.3048" layer="1"/>
+<wire x1="35.56" y1="20.701" x2="36.195" y2="20.701" width="0.3048" layer="1"/>
+<wire x1="36.195" y1="20.701" x2="36.576" y2="20.32" width="0.3048" layer="1"/>
 <wire x1="36.576" y1="20.32" x2="36.576" y2="16.51" width="0.3048" layer="1"/>
 <wire x1="36.576" y1="16.51" x2="36.068" y2="16.002" width="0.3048" layer="1"/>
 <wire x1="36.068" y1="16.002" x2="32.512" y2="16.002" width="0.3048" layer="1"/>
@@ -1186,10 +1188,10 @@ This is a footprint for an edge mount RF antenna. Works pretty well with SMA typ
 <wire x1="31.788" y1="14.262" x2="33.02" y2="15.494" width="0.3048" layer="1"/>
 <wire x1="33.02" y1="15.494" x2="37.884" y2="15.494" width="0.3048" layer="1"/>
 <wire x1="37.884" y1="15.494" x2="39.116" y2="14.262" width="0.3048" layer="1"/>
-<wire x1="47.204" y1="11.176" x2="47.204" y2="11.73" width="0.3048" layer="1"/>
-<wire x1="47.204" y1="11.73" x2="44.704" y2="13.976" width="0.3048" layer="1"/>
 <wire x1="39.148" y1="14.23" x2="44.45" y2="14.23" width="0.3048" layer="1"/>
 <wire x1="44.45" y1="14.23" x2="44.704" y2="13.976" width="0.3048" layer="1"/>
+<wire x1="47.204" y1="11.176" x2="47.204" y2="11.476" width="0.3048" layer="1"/>
+<wire x1="47.204" y1="11.476" x2="44.704" y2="13.976" width="0.3048" layer="1"/>
 </signal>
 <signal name="VBATT_MEAS">
 <contactref element="STM32" pad="7"/>
