@@ -55,7 +55,7 @@
  * @brief   System time counter resolution.
  * @note    Allowed values are 16 or 32 bits.
  */
-#define NIL_CFG_ST_RESOLUTION               32
+#define NIL_CFG_ST_RESOLUTION               16
 
 /**
  * @brief   System tick frequency.
