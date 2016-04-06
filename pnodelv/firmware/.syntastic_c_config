@@ -4,10 +4,10 @@
 -I ChibiOS/os/common/ports/ARMCMx/devices/STM32F0xx
 -I ChibiOS/os/ext/CMSIS/include
 -I ChibiOS/os/ext/CMSIS/ST
--I ChibiOS/os/rt/include
--I ChibiOS/os/rt/ports/ARMCMx
--I ChibiOS/os/rt/ports/ARMCMx/compilers/GCC
--I ChibiOS/os/hal/osal/rt
+-I ChibiOS/os/nil/include
+-I ChibiOS/os/nil/ports/ARMCMx
+-I ChibiOS/os/nil/ports/ARMCMx/compilers/GCC
+-I ChibiOS/os/hal/osal/nil
 -I ChibiOS/os/hal/include
 -I ChibiOS/os/hal/ports/common/ARMCMx
 -I ChibiOS/os/hal/ports/STM32/STM32F0xx
@@ -23,6 +23,6 @@
 -I ChibiOS/os/hal/ports/STM32/LLD/ADCv1
 -I ChibiOS/os/hal/ports/STM32/LLD/DACv1
 -I ChibiOS/os/hal/ports/STM32/LLD/EXTIv1
--I ChibiOS/test/rt
+-I ChibiOS/test/nil
 -I ChibiOS/os/various
 -I ChibiOS/os/hal/lib/streams
