@@ -244,7 +244,7 @@
                                      PIN_OSPEED_HIGH(GPIOA_SWDAT) |         \
                                      PIN_OSPEED_HIGH(GPIOA_SWCLK) |         \
                                      PIN_OSPEED_HIGH(GPIOA_PIN15))
-#define VAL_GPIOA_PUPDR             (PIN_PUPDR_FLOATING(GPIOA_CLAMP) |     \
+#define VAL_GPIOA_PUPDR             (PIN_PUPDR_PULLUP(GPIOA_CLAMP) |     \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN1) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN2) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN3) |         \
@@ -438,8 +438,8 @@
                                      PIN_MODE_INPUT(GPIOC_PIN5) |           \
                                      PIN_MODE_INPUT(GPIOC_PIN6) |           \
                                      PIN_MODE_INPUT(GPIOC_PIN7) |           \
-                                     PIN_MODE_OUTPUT(GPIOC_PIN8) |          \
-                                     PIN_MODE_OUTPUT(GPIOC_PIN9) |          \
+                                     PIN_MODE_INPUT(GPIOC_PIN8) |          \
+                                     PIN_MODE_INPUT(GPIOC_PIN9) |          \
                                      PIN_MODE_INPUT(GPIOC_PIN10) |          \
                                      PIN_MODE_INPUT(GPIOC_PIN11) |          \
                                      PIN_MODE_INPUT(GPIOC_PIN12) |          \
@@ -470,8 +470,8 @@
                                      PIN_OSPEED_VERYLOW(GPIOC_PIN5) |       \
                                      PIN_OSPEED_VERYLOW(GPIOC_PIN6) |       \
                                      PIN_OSPEED_VERYLOW(GPIOC_PIN7) |       \
-                                     PIN_OSPEED_HIGH(GPIOC_PIN8) |          \
-                                     PIN_OSPEED_HIGH(GPIOC_PIN9) |          \
+                                     PIN_OSPEED_VERYLOW(GPIOC_PIN8) |          \
+                                     PIN_OSPEED_VERYLOW(GPIOC_PIN9) |          \
                                      PIN_OSPEED_VERYLOW(GPIOC_PIN10) |      \
                                      PIN_OSPEED_VERYLOW(GPIOC_PIN11) |      \
                                      PIN_OSPEED_VERYLOW(GPIOC_PIN12) |      \
@@ -486,8 +486,8 @@
                                      PIN_PUPDR_PULLUP(GPIOC_PIN5) |         \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN6) |         \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN7) |         \
-                                     PIN_PUPDR_FLOATING(GPIOC_PIN8) |       \
-                                     PIN_PUPDR_FLOATING(GPIOC_PIN9) |       \
+                                     PIN_PUPDR_PULLUP(GPIOC_PIN8) |       \
+                                     PIN_PUPDR_PULLUP(GPIOC_PIN9) |       \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN10) |        \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN11) |        \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN12) |        \
@@ -502,8 +502,8 @@
                                      PIN_ODR_HIGH(GPIOC_PIN5) |             \
                                      PIN_ODR_HIGH(GPIOC_PIN6) |             \
                                      PIN_ODR_HIGH(GPIOC_PIN7) |             \
-                                     PIN_ODR_LOW(GPIOC_PIN8) |              \
-                                     PIN_ODR_LOW(GPIOC_PIN9) |              \
+                                     PIN_ODR_HIGH(GPIOC_PIN8) |              \
+                                     PIN_ODR_HIGH(GPIOC_PIN9) |              \
                                      PIN_ODR_HIGH(GPIOC_PIN10) |            \
                                      PIN_ODR_HIGH(GPIOC_PIN11) |            \
                                      PIN_ODR_HIGH(GPIOC_PIN12) |            \
