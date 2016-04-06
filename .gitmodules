@@ -1,3 +1,0 @@
-[submodule "pnodelv/firmware/ChibiOS"]
-	path = pnodelv/firmware/ChibiOS
-	url = https://github.com/ChibiOS/ChibiOS.git
