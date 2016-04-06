@@ -31,25 +31,11 @@ THD_FUNCTION(Thread1, arg) {
 }
 
 /*
- * Thread 2.
- */
-THD_WORKING_AREA(waThread2, 128);
-THD_FUNCTION(Thread2, arg) {
-
-  (void)arg;
-
-  while (true) {
-    chThdSleepMilliseconds(250);
-  }
-}
-
-/*
  * Threads static table, one entry per thread. The number of entries must
  * match NIL_CFG_NUM_THREADS.
  */
 THD_TABLE_BEGIN
   THD_TABLE_ENTRY(waThread1, "thd1", Thread1, NULL)
-  THD_TABLE_ENTRY(waThread2, "thd2", Thread2, NULL)
 THD_TABLE_END
 
 /*
