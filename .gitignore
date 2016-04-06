@@ -1,4 +1,8 @@
 # Ignore list for Eagle, a PCB layout tool
+#
+#Chibi
+pnodelv/firmware/build
+pnodelv/firmware/.dep
 
 # Backup files
 *.s#?
