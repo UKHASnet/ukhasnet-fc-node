@@ -50,35 +50,12 @@ THD_FUNCTION(Thread2, arg) {
 }
 
 /*
- * Thread 3.
- */
-THD_WORKING_AREA(waThread3, 128);
-THD_FUNCTION(Thread3, arg) {
-
-  (void)arg;
-
-  /*
-   * Activates the serial driver 1 using the driver default configuration.
-   * PA9 and PA10 are routed to USART1.
-   */
-  sdStart(&SD1, NULL);
-  palSetPadMode(GPIOA, 9, PAL_MODE_ALTERNATE(1));       /* USART1 TX.       */
-  palSetPadMode(GPIOA, 10, PAL_MODE_ALTERNATE(1));      /* USART1 RX.       */
-
-  while (true) {
-    chnWrite(&SD1, (const uint8_t *)"Hello World!\r\n", 14);
-    chThdSleepMilliseconds(2000);
-  }
-}
-
-/*
  * Threads static table, one entry per thread. The number of entries must
  * match NIL_CFG_NUM_THREADS.
  */
 THD_TABLE_BEGIN
   THD_TABLE_ENTRY(waThread1, "blinker1", Thread1, NULL)
   THD_TABLE_ENTRY(waThread2, "blinker2", Thread2, NULL)
-  THD_TABLE_ENTRY(waThread3, "hello", Thread3, NULL)
 THD_TABLE_END
 
 /*
