@@ -5,7 +5,7 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16
+  USE_OPT = -O0 -ggdb -fomit-frame-pointer -falign-functions=16
 endif
 
 # C specific options here (added to USE_OPT).
@@ -209,3 +209,39 @@ ULIBS =
 
 RULESPATH = $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC
 include $(RULESPATH)/rules.mk
+
+##############################################################################
+# Black Magic Probe flashing via GDB
+#
+flash: build/$(PROJECT).elf
+	arm-none-eabi-gdb --batch \
+	              -ex 'target extended-remote /dev/cu.usbmodemE2C2B5C1' \
+		      -ex 'monitor version' \
+		      -ex 'monitor swdp_scan' \
+		      -ex 'attach 1' \
+		      -ex 'load' build/$(PROJECT).elf \
+
+debug: build/$(PROJECT).elf
+	arm-none-eabi-gdb -ex 'target extended-remote /dev/cu.usbmodemE2C2B5C1' \
+	              -ex 'monitor swdp_scan' \
+		      -ex 'attach 1' \
+		      -ex "file build/$(PROJECT).elf"
+power:
+	arm-none-eabi-gdb --batch \
+                      -ex 'target extended-remote /dev/cu.usbmodemE2C2B5C1' \
+	              -ex 'monitor tpwr enable'
+unpower:
+	arm-none-eabi-gdb --batch \
+	              -ex 'target extended-remote /dev/cu.usbmodemE2C2B5C1' \
+	              -ex 'monitor tpwr disable'
+
+run:
+	arm-none-eabi-gdb --batch \
+                      -ex 'target extended-remote /dev/cu.usbmodemE2C2B5C1' \
+	              -ex 'monitor swdp_scan' \
+		      -ex 'attach 1' \
+		      -ex 'run'
+
+#
+# End BMP flashing
+#################################

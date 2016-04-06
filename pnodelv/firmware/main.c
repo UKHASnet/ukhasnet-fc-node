@@ -26,9 +26,6 @@ THD_FUNCTION(Thread1, arg) {
   (void)arg;
 
   while (true) {
-    palSetPad(GPIOC, GPIOC_LED4);
-    chThdSleepMilliseconds(500);
-    palClearPad(GPIOC, GPIOC_LED4);
     chThdSleepMilliseconds(500);
   }
 }
@@ -42,9 +39,6 @@ THD_FUNCTION(Thread2, arg) {
   (void)arg;
 
   while (true) {
-    palSetPad(GPIOC, GPIOC_LED3);
-    chThdSleepMilliseconds(250);
-    palClearPad(GPIOC, GPIOC_LED3);
     chThdSleepMilliseconds(250);
   }
 }
@@ -54,8 +48,8 @@ THD_FUNCTION(Thread2, arg) {
  * match NIL_CFG_NUM_THREADS.
  */
 THD_TABLE_BEGIN
-  THD_TABLE_ENTRY(waThread1, "blinker1", Thread1, NULL)
-  THD_TABLE_ENTRY(waThread2, "blinker2", Thread2, NULL)
+  THD_TABLE_ENTRY(waThread1, "thd1", Thread1, NULL)
+  THD_TABLE_ENTRY(waThread2, "thd2", Thread2, NULL)
 THD_TABLE_END
 
 /*
