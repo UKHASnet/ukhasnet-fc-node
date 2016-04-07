@@ -17,17 +17,40 @@
 #include "hal.h"
 #include "nil.h"
 
+static uint8_t htu_tx;
+static uint8_t htu_buf[3];
+
+/*
+ * I2C config
+ */
+static const I2CConfig i2c_config = { 
+    STM32_TIMINGR_PRESC(11U) |
+        STM32_TIMINGR_SCLDEL(4U) | STM32_TIMINGR_SDADEL(2U) |
+        STM32_TIMINGR_SCLH(15U)  | STM32_TIMINGR_SCLL(19U),
+    0,  
+    0
+};
+
 /*
  * Thread 1.
  */
-THD_WORKING_AREA(waThread1, 128);
+THD_WORKING_AREA(waThread1, 256);
 THD_FUNCTION(Thread1, arg) {
+    (void)arg;
+    // Buffers
+    msg_t res;
 
-  (void)arg;
+    // Configure I2C
+    i2cStart(&I2CD1, &i2c_config);
 
-  while (true) {
-    chThdSleepMilliseconds(500);
-  }
+    while(true)
+    {
+        // Read sensor
+        htu_tx = 0xE3;
+        res = i2cMasterTransmitTimeout(&I2CD1, 0x40, &htu_tx, 1, 
+                htu_buf, 3, TIME_INFINITE);
+        chThdSleepMilliseconds(500);
+    }
 }
 
 /*
@@ -43,20 +66,20 @@ THD_TABLE_END
  */
 int main(void) {
 
-  /*
-   * System initializations.
-   * - HAL initialization, this also initializes the configured device drivers
-   *   and performs the board-specific initializations.
-   * - Kernel initialization, the main() function becomes a thread and the
-   *   RTOS is active.
-   */
-  halInit();
-  chSysInit();
+    /*
+     * System initializations.
+     * - HAL initialization, this also initializes the configured device drivers
+     *   and performs the board-specific initializations.
+     * - Kernel initialization, the main() function becomes a thread and the
+     *   RTOS is active.
+     */
+    halInit();
+    chSysInit();
 
-  /* This is now the idle thread loop, you may perform here a low priority
-     task but you must never try to sleep or wait in this loop. Note that
-     this tasks runs at the lowest priority level so any instruction added
-     here will be executed after all other tasks have been started.*/
-  while (true) {
-  }
+    /* This is now the idle thread loop, you may perform here a low priority
+       task but you must never try to sleep or wait in this loop. Note that
+       this tasks runs at the lowest priority level so any instruction added
+       here will be executed after all other tasks have been started.*/
+    while (true) {
+    }
 }

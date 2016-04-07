@@ -63,7 +63,7 @@
  *          option defines the maximum amount of time allowed for
  *          timeouts.
  */
-#define NIL_CFG_ST_FREQUENCY                50000
+#define NIL_CFG_ST_FREQUENCY                1000
 
 /**
  * @brief   Time delta constant for the tick-less mode.
@@ -73,7 +73,7 @@
  *          The value one is not valid, timeouts are rounded up to
  *          this value.
  */
-#define NIL_CFG_ST_TIMEDELTA                2
+#define NIL_CFG_ST_TIMEDELTA                0
 
 /** @} */
 
@@ -104,12 +104,12 @@
 /**
  * @brief   System assertions.
  */
-#define NIL_CFG_ENABLE_ASSERTS              FALSE
+#define NIL_CFG_ENABLE_ASSERTS              TRUE
 
 /**
  * @brief   Stack check.
  */
-#define NIL_CFG_ENABLE_STACK_CHECK          FALSE
+#define NIL_CFG_ENABLE_STACK_CHECK          TRUE
 
 /** @} */
 

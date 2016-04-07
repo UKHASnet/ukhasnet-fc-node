@@ -205,8 +205,8 @@
                                      PIN_MODE_INPUT(GPIOA_PIN6) |           \
                                      PIN_MODE_INPUT(GPIOA_RADIO_SHDN) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN8) |           \
-                                     PIN_MODE_INPUT(GPIOA_SCL) |           \
-                                     PIN_MODE_INPUT(GPIOA_SDA) |          \
+                                     PIN_MODE_ALTERNATE(GPIOA_SCL) |           \
+                                     PIN_MODE_ALTERNATE(GPIOA_SDA) |          \
                                      PIN_MODE_INPUT(GPIOA_PIN11) |          \
                                      PIN_MODE_INPUT(GPIOA_PIN12) |          \
                                      PIN_MODE_ALTERNATE(GPIOA_SWDAT) |      \
@@ -237,8 +237,8 @@
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN6) |       \
                                      PIN_OSPEED_VERYLOW(GPIOA_RADIO_SHDN) |       \
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN8) |       \
-                                     PIN_OSPEED_VERYLOW(GPIOA_SCL) |       \
-                                     PIN_OSPEED_VERYLOW(GPIOA_SDA) |      \
+                                     PIN_OSPEED_HIGH(GPIOA_SCL) |       \
+                                     PIN_OSPEED_HIGH(GPIOA_SDA) |      \
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN11) |      \
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN12) |      \
                                      PIN_OSPEED_HIGH(GPIOA_SWDAT) |         \
@@ -253,8 +253,8 @@
                                      PIN_PUPDR_PULLUP(GPIOA_PIN6) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_RADIO_SHDN) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN8) |         \
-                                     PIN_PUPDR_PULLUP(GPIOA_SCL) |         \
-                                     PIN_PUPDR_PULLUP(GPIOA_SDA) |        \
+                                     PIN_PUPDR_FLOATING(GPIOA_SCL) |         \
+                                     PIN_PUPDR_FLOATING(GPIOA_SDA) |        \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN11) |        \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN12) |        \
                                      PIN_PUPDR_PULLUP(GPIOA_SWDAT) |        \
@@ -285,8 +285,8 @@
                                      PIN_AFIO_AF(GPIOA_PIN6, 0) |           \
                                      PIN_AFIO_AF(GPIOA_RADIO_SHDN, 0))
 #define VAL_GPIOA_AFRH              (PIN_AFIO_AF(GPIOA_PIN8, 0) |           \
-                                     PIN_AFIO_AF(GPIOA_SCL, 0) |           \
-                                     PIN_AFIO_AF(GPIOA_SDA, 0) |          \
+                                     PIN_AFIO_AF(GPIOA_SCL, 4) |           \
+                                     PIN_AFIO_AF(GPIOA_SDA, 4) |          \
                                      PIN_AFIO_AF(GPIOA_PIN11, 0) |          \
                                      PIN_AFIO_AF(GPIOA_PIN12, 0) |          \
                                      PIN_AFIO_AF(GPIOA_SWDAT, 0) |          \
