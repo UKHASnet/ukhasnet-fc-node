@@ -203,7 +203,7 @@
                                      PIN_MODE_INPUT(GPIOA_PIN4) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN5) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN6) |           \
-                                     PIN_MODE_INPUT(GPIOA_RADIO_SHDN) |           \
+                                     PIN_MODE_OUTPUT(GPIOA_RADIO_SHDN) |           \
                                      PIN_MODE_INPUT(GPIOA_PIN8) |           \
                                      PIN_MODE_ALTERNATE(GPIOA_SCL) |           \
                                      PIN_MODE_ALTERNATE(GPIOA_SDA) |          \
@@ -235,7 +235,7 @@
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN4) |       \
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN5) |       \
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN6) |       \
-                                     PIN_OSPEED_VERYLOW(GPIOA_RADIO_SHDN) |       \
+                                     PIN_OSPEED_HIGH(GPIOA_RADIO_SHDN) |       \
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN8) |       \
                                      PIN_OSPEED_HIGH(GPIOA_SCL) |       \
                                      PIN_OSPEED_HIGH(GPIOA_SDA) |      \
@@ -251,7 +251,7 @@
                                      PIN_PUPDR_PULLUP(GPIOA_PIN4) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN5) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN6) |         \
-                                     PIN_PUPDR_PULLUP(GPIOA_RADIO_SHDN) |         \
+                                     PIN_PUPDR_FLOATING(GPIOA_RADIO_SHDN) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN8) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_SCL) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_SDA) |        \
@@ -267,7 +267,7 @@
                                      PIN_ODR_HIGH(GPIOA_PIN4) |             \
                                      PIN_ODR_HIGH(GPIOA_PIN5) |             \
                                      PIN_ODR_HIGH(GPIOA_PIN6) |             \
-                                     PIN_ODR_HIGH(GPIOA_RADIO_SHDN) |             \
+                                     PIN_ODR_LOW(GPIOA_RADIO_SHDN) |        \
                                      PIN_ODR_HIGH(GPIOA_PIN8) |             \
                                      PIN_ODR_HIGH(GPIOA_SCL) |             \
                                      PIN_ODR_HIGH(GPIOA_SDA) |            \

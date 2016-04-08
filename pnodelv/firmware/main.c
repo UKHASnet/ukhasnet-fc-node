@@ -17,9 +17,17 @@
 #include "hal.h"
 #include "nil.h"
 
+#define HTU_ADDR 0x40
+#define HTU_READ_TEMP 0xE3
+#define HTU_READ_HUMID 0xE5
+
+#define RADIO_ADDR 0xE0
+#define RADIO_GET_REV 0x10
+
 static uint8_t htu_tx;
 static uint8_t htu_buf[3];
-static uint8_t i2cerr;
+static uint8_t radio_tx;
+static uint8_t radio_buf[12];
 
 /*
  *  * I2C2 config. See p643 of F0x0 refman.
@@ -45,12 +53,23 @@ THD_FUNCTION(Thread1, arg) {
     // Configure I2C
     i2cStart(&I2CD1, &i2c_config);
 
+    // Radio SHDN low
+    palSetPadMode(GPIOA, GPIOA_RADIO_SHDN, PAL_MODE_OUTPUT_PUSHPULL);
+    palClearPad(GPIOA, GPIOA_RADIO_SHDN);
+
     while(true)
     {
-        htu_tx = 0xe3;
-        i2cMasterTransmitTimeout(&I2CD1, 0x40, &htu_tx, 1,
+        // Sensors
+        htu_tx = HTU_READ_TEMP;
+        i2cMasterTransmitTimeout(&I2CD1, HTU_ADDR, &htu_tx, 1,
                 htu_buf, 3, TIME_INFINITE);
-        i2cerr = i2c_lld_get_errors(&I2CD1);
+
+        // Radio
+        radio_tx = RADIO_GET_REV;
+        i2cMasterTransmitTimeout(&I2CD1, RADIO_ADDR, &radio_tx, 1,
+                radio_buf, 11, TIME_INFINITE);
+
+        // Sleep
         chThdSleepMilliseconds(500);
     }
 }
