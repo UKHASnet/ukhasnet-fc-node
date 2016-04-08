@@ -19,12 +19,13 @@
 
 static uint8_t htu_tx;
 static uint8_t htu_buf[3];
+static uint8_t i2cerr;
 
 /*
- * I2C config
- */
+ *  * I2C2 config. See p643 of F0x0 refman.
+ *   */
 static const I2CConfig i2c_config = { 
-    STM32_TIMINGR_PRESC(11U) |
+    STM32_TIMINGR_PRESC(1U) |
         STM32_TIMINGR_SCLDEL(4U) | STM32_TIMINGR_SDADEL(2U) |
         STM32_TIMINGR_SCLH(15U)  | STM32_TIMINGR_SCLL(19U),
     0,  
@@ -37,18 +38,19 @@ static const I2CConfig i2c_config = {
 THD_WORKING_AREA(waThread1, 256);
 THD_FUNCTION(Thread1, arg) {
     (void)arg;
-    // Buffers
-    msg_t res;
+
+    // Wait for hardware to start
+    chThdSleepMilliseconds(100);
 
     // Configure I2C
     i2cStart(&I2CD1, &i2c_config);
 
     while(true)
     {
-        // Read sensor
-        htu_tx = 0xE3;
-        res = i2cMasterTransmitTimeout(&I2CD1, 0x40, &htu_tx, 1, 
+        htu_tx = 0xe3;
+        i2cMasterTransmitTimeout(&I2CD1, 0x40, &htu_tx, 1,
                 htu_buf, 3, TIME_INFINITE);
+        i2cerr = i2c_lld_get_errors(&I2CD1);
         chThdSleepMilliseconds(500);
     }
 }
