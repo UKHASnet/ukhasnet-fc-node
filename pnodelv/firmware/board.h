@@ -253,8 +253,8 @@
                                      PIN_PUPDR_PULLUP(GPIOA_PIN6) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_RADIO_SHDN) |         \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN8) |         \
-                                     PIN_PUPDR_FLOATING(GPIOA_SCL) |         \
-                                     PIN_PUPDR_FLOATING(GPIOA_SDA) |        \
+                                     PIN_PUPDR_PULLUP(GPIOA_SCL) |         \
+                                     PIN_PUPDR_PULLUP(GPIOA_SDA) |        \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN11) |        \
                                      PIN_PUPDR_PULLUP(GPIOA_PIN12) |        \
                                      PIN_PUPDR_PULLUP(GPIOA_SWDAT) |        \
