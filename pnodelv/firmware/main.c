@@ -26,10 +26,13 @@
 
 /* Radio commands */
 #define RADIO_GET_REV   0x10
+#define RADIO_SET_STATE 0x60
+#define RADIO_GET_STATE 0x61
+#define RADIO_MEAS_BATT 0x68
 
 static uint8_t htu_tx;
 static uint8_t htu_buf[3];
-static uint8_t radio_tx;
+static uint8_t radio_tx[6];
 static uint8_t radio_buf[12];
 
 /*
@@ -49,6 +52,7 @@ static const I2CConfig i2c_config = {
 THD_WORKING_AREA(waThread1, 256);
 THD_FUNCTION(Thread1, arg) {
     (void)arg;
+    msg_t res;
 
     // Wait for hardware to start
     chThdSleepMilliseconds(100);
@@ -63,16 +67,18 @@ THD_FUNCTION(Thread1, arg) {
     while(true)
     {
         // Sensors
-        /*
         htu_tx = HTU_READ_TEMP;
-        i2cMasterTransmitTimeout(&I2CD1, HTU_ADDR, &htu_tx, 1,
+        res = i2cMasterTransmitTimeout(&I2CD1, HTU_ADDR, &htu_tx, 1,
                 htu_buf, 3, TIME_INFINITE);
-        */
 
         // Radio
-        radio_tx = RADIO_GET_REV;
-        i2cMasterTransmitTimeout(&I2CD1, RADIO_ADDR, &radio_tx, 1,
-                radio_buf, 11, TIME_INFINITE);
+        /*
+        radio_tx[0] = RADIO_GET_REV;
+        i2cMasterTransmitTimeout(&I2CD1, RADIO_ADDR, radio_tx, 1,
+                radio_buf, 0, TIME_INFINITE);
+        i2cMasterReceiveTimeout(&I2CD1, RADIO_ADDR, radio_buf, 11,
+                TIME_INFINITE);
+        */
 
         // Sleep
         chThdSleepMilliseconds(500);
