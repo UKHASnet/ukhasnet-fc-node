@@ -69,7 +69,10 @@ THD_FUNCTION(Thread1, arg) {
         // Sensors
         htu_tx = HTU_READ_TEMP;
         res = i2cMasterTransmitTimeout(&I2CD1, HTU_ADDR, &htu_tx, 1,
-                htu_buf, 3, TIME_INFINITE);
+                htu_buf, 0, TIME_INFINITE);
+        chThdSleepMilliseconds(50);
+        i2cMasterReceiveTimeout(&I2CD1, HTU_ADDR, htu_buf, 3,
+                TIME_INFINITE);
 
         // Radio
         /*

@@ -17413,18 +17413,6 @@ temp thermometer 1-wire one-wire one wire</description>
 <wire x1="-17.78" y1="10.16" x2="-7.62" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="DIO0" class="0">
-<segment>
-<pinref part="U$4" gate="A" pin="DIO0"/>
-<wire x1="152.4" y1="48.26" x2="149.86" y2="48.26" width="0.1524" layer="91"/>
-<label x="149.86" y="48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT1/AIN0/ADC1)PA1"/>
-<wire x1="45.72" y1="-58.42" x2="48.26" y2="-58.42" width="0.1524" layer="91"/>
-<label x="48.26" y="-58.42" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="(PCINT7/ICP/OC0B/ADC7)PA7"/>
