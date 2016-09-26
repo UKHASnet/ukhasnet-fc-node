@@ -17033,7 +17033,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C1" library="rcl" deviceset="CPOL-EU" device="SANYO_SMD_C6" value="100u"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="U$1" library="SparkFun-DigitalIC" deviceset="ATTINY84" device=""/>
+<part name="U1" library="SparkFun-DigitalIC" deviceset="ATTINY84" device=""/>
 <part name="IC1" library="Mine" deviceset="HTU21D" device=""/>
 <part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -17044,7 +17044,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="BAT1" library="SparkFun-Electromechanical" deviceset="BATTERY" device="AAA"/>
-<part name="U1" library="SparkFun-Sensors" deviceset="DS18B20" device=""/>
+<part name="U5" library="SparkFun-Sensors" deviceset="DS18B20" device=""/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
@@ -17052,6 +17052,8 @@ temp thermometer 1-wire one-wire one wire</description>
 <sheets>
 <sheet>
 <plain>
+<text x="124.46" y="-71.12" size="2.54" layer="94" font="vector" ratio="15">Low power film canister node with DS18B20</text>
+<text x="124.46" y="-76.2" size="2.54" layer="94" font="vector" ratio="15">Jon Sowman 09/16</text>
 </plain>
 <instances>
 <instance part="SUPPLY1" gate="G$1" x="-7.62" y="-27.94"/>
@@ -17079,7 +17081,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <instance part="GND7" gate="1" x="-12.7" y="12.7" rot="R90"/>
 <instance part="C1" gate="G$1" x="134.62" y="40.64"/>
 <instance part="R3" gate="G$1" x="73.66" y="45.72" rot="R90"/>
-<instance part="U$1" gate="G$1" x="20.32" y="-45.72"/>
+<instance part="U1" gate="G$1" x="20.32" y="-45.72"/>
 <instance part="IC1" gate="G$1" x="109.22" y="-50.8"/>
 <instance part="SUPPLY6" gate="G$1" x="114.3" y="-33.02"/>
 <instance part="GND8" gate="1" x="114.3" y="-68.58"/>
@@ -17091,7 +17093,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <instance part="R6" gate="G$1" x="101.6" y="-15.24" rot="R90"/>
 <instance part="GND9" gate="1" x="101.6" y="-25.4"/>
 <instance part="BAT1" gate="G$1" x="-27.94" y="48.26" rot="R270"/>
-<instance part="U1" gate="G$1" x="193.04" y="-43.18"/>
+<instance part="U5" gate="G$1" x="193.04" y="-43.18"/>
 <instance part="R7" gate="G$1" x="167.64" y="-38.1" rot="R90"/>
 <instance part="GND10" gate="1" x="180.34" y="-50.8"/>
 <instance part="SUPPLY7" gate="G$1" x="180.34" y="-33.02"/>
@@ -17144,7 +17146,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <wire x1="-15.24" y1="12.7" x2="-17.78" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="U1" gate="G$1" pin="GND"/>
 <wire x1="-5.08" y1="-60.96" x2="-7.62" y2="-60.96" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="-7.62" y1="-60.96" x2="-7.62" y2="-63.5" width="0.1524" layer="91"/>
@@ -17165,7 +17167,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <segment>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="180.34" y1="-48.26" x2="180.34" y2="-45.72" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="GND"/>
+<pinref part="U5" gate="G$1" pin="GND"/>
 <wire x1="180.34" y1="-45.72" x2="182.88" y2="-45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -17200,7 +17202,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <segment>
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
 <wire x1="-7.62" y1="-27.94" x2="-7.62" y2="-30.48" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
+<pinref part="U1" gate="G$1" pin="VCC"/>
 <wire x1="-7.62" y1="-30.48" x2="-5.08" y2="-30.48" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="-7.62" y1="-30.48" x2="-7.62" y2="-40.64" width="0.1524" layer="91"/>
@@ -17214,12 +17216,12 @@ temp thermometer 1-wire one-wire one wire</description>
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="129.54" y1="-2.54" x2="129.54" y2="0" width="0.1524" layer="91"/>
-<label x="129.54" y="0" size="1.27" layer="95" xref="yes"/>
+<label x="129.54" y="0" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="SUPPLY7" gate="G$1" pin="VCC"/>
 <wire x1="180.34" y1="-33.02" x2="180.34" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="VDD"/>
+<pinref part="U5" gate="G$1" pin="VDD"/>
 <wire x1="180.34" y1="-35.56" x2="182.88" y2="-35.56" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="167.64" y1="-33.02" x2="177.8" y2="-33.02" width="0.1524" layer="91"/>
@@ -17240,46 +17242,46 @@ temp thermometer 1-wire one-wire one wire</description>
 <segment>
 <pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="35.56" y1="17.78" x2="27.94" y2="17.78" width="0.1524" layer="91"/>
-<label x="27.94" y="17.78" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="27.94" y="17.78" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$4" gate="A" pin="MISO"/>
 <wire x1="190.5" y1="38.1" x2="193.04" y2="38.1" width="0.1524" layer="91"/>
-<label x="193.04" y="38.1" size="1.27" layer="95" xref="yes"/>
+<label x="193.04" y="38.1" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT5/OC1B/MISO/DO/ADC5)PA5"/>
+<pinref part="U1" gate="G$1" pin="(PCINT5/OC1B/MISO/DO/ADC5)PA5"/>
 <wire x1="45.72" y1="-48.26" x2="48.26" y2="-48.26" width="0.1524" layer="91"/>
-<label x="48.26" y="-48.26" size="1.27" layer="95" xref="yes"/>
+<label x="48.26" y="-48.26" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="RESET" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="5"/>
 <wire x1="35.56" y1="12.7" x2="27.94" y2="12.7" width="0.1524" layer="91"/>
-<label x="27.94" y="12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="27.94" y="12.7" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT11/~RESET/DW)PB3"/>
+<pinref part="U1" gate="G$1" pin="(PCINT11/~RESET/DW)PB3"/>
 <wire x1="45.72" y1="-30.48" x2="48.26" y2="-30.48" width="0.1524" layer="91"/>
-<label x="48.26" y="-30.48" size="1.27" layer="95" xref="yes"/>
+<label x="48.26" y="-30.48" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="4"/>
 <wire x1="53.34" y1="15.24" x2="58.42" y2="15.24" width="0.1524" layer="91"/>
-<label x="58.42" y="15.24" size="1.27" layer="95" xref="yes"/>
+<label x="58.42" y="15.24" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$4" gate="A" pin="MOSI"/>
 <wire x1="190.5" y1="43.18" x2="193.04" y2="43.18" width="0.1524" layer="91"/>
-<label x="193.04" y="43.18" size="1.27" layer="95" xref="yes"/>
+<label x="193.04" y="43.18" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT6/OC1A/SDA/MOSI/ADC6)PA6"/>
+<pinref part="U1" gate="G$1" pin="(PCINT6/OC1A/SDA/MOSI/ADC6)PA6"/>
 <wire x1="45.72" y1="-45.72" x2="48.26" y2="-45.72" width="0.1524" layer="91"/>
-<label x="48.26" y="-45.72" size="1.27" layer="95" xref="yes"/>
+<label x="48.26" y="-45.72" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="DATA"/>
@@ -17296,12 +17298,12 @@ temp thermometer 1-wire one-wire one wire</description>
 <wire x1="81.28" y1="43.18" x2="86.36" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <junction x="73.66" y="40.64"/>
-<label x="55.88" y="40.64" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="55.88" y="40.64" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT3/T0/ADC3)PA3"/>
+<pinref part="U1" gate="G$1" pin="(PCINT3/T0/ADC3)PA3"/>
 <wire x1="45.72" y1="-53.34" x2="48.26" y2="-53.34" width="0.1524" layer="91"/>
-<label x="48.26" y="-53.34" size="1.27" layer="95" xref="yes"/>
+<label x="48.26" y="-53.34" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -17327,7 +17329,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <pinref part="U2" gate="G$1" pin="VIN"/>
 <wire x1="83.82" y1="53.34" x2="83.82" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="48.26" x2="86.36" y2="48.26" width="0.1524" layer="91"/>
-<label x="83.82" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="83.82" y="55.88" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 <wire x1="83.82" y1="48.26" x2="83.82" y2="35.56" width="0.1524" layer="91"/>
 <junction x="83.82" y="48.26"/>
 <pinref part="C2" gate="G$1" pin="1"/>
@@ -17339,30 +17341,30 @@ temp thermometer 1-wire one-wire one wire</description>
 <segment>
 <pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="-2.54" y1="10.16" x2="5.08" y2="10.16" width="0.1524" layer="91"/>
-<label x="5.08" y="10.16" size="1.27" layer="95" xref="yes"/>
+<label x="5.08" y="10.16" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="2.54" x2="101.6" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="5.08" x2="101.6" y2="5.08" width="0.1524" layer="91"/>
-<label x="104.14" y="5.08" size="1.27" layer="95" font="fixed" xref="yes"/>
+<label x="104.14" y="5.08" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="RFM_SS" class="0">
 <segment>
 <pinref part="U$4" gate="A" pin="NSS"/>
 <wire x1="190.5" y1="48.26" x2="193.04" y2="48.26" width="0.1524" layer="91"/>
-<label x="193.04" y="48.26" size="1.27" layer="95" xref="yes"/>
+<label x="193.04" y="48.26" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT2/AIN1/ADC2)PA2"/>
+<pinref part="U1" gate="G$1" pin="(PCINT2/AIN1/ADC2)PA2"/>
 <wire x1="45.72" y1="-55.88" x2="48.26" y2="-55.88" width="0.1524" layer="91"/>
-<label x="48.26" y="-55.88" size="1.27" layer="95" xref="yes"/>
+<label x="48.26" y="-55.88" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="129.54" y1="-12.7" x2="129.54" y2="-15.24" width="0.1524" layer="91"/>
-<label x="129.54" y="-15.24" size="1.27" layer="95" xref="yes"/>
+<label x="129.54" y="-15.24" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -17374,26 +17376,26 @@ temp thermometer 1-wire one-wire one wire</description>
 </net>
 <net name="DET" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT10/INT0/OC0A/CKOUT)PB2"/>
+<pinref part="U1" gate="G$1" pin="(PCINT10/INT0/OC0A/CKOUT)PB2"/>
 <wire x1="45.72" y1="-33.02" x2="48.26" y2="-33.02" width="0.1524" layer="91"/>
-<label x="48.26" y="-33.02" size="1.27" layer="95" xref="yes"/>
+<label x="48.26" y="-33.02" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="DETECT"/>
 <wire x1="12.7" y1="43.18" x2="15.24" y2="43.18" width="0.1524" layer="91"/>
-<label x="15.24" y="43.18" size="1.27" layer="95" xref="yes"/>
+<label x="15.24" y="43.18" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="SCK" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT4/T1/SCL/USCK/ADC4)PA4"/>
+<pinref part="U1" gate="G$1" pin="(PCINT4/T1/SCL/USCK/ADC4)PA4"/>
 <wire x1="45.72" y1="-50.8" x2="48.26" y2="-50.8" width="0.1524" layer="91"/>
-<label x="48.26" y="-50.8" size="1.27" layer="95" xref="yes"/>
+<label x="48.26" y="-50.8" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="3"/>
 <wire x1="35.56" y1="15.24" x2="27.94" y2="15.24" width="0.1524" layer="91"/>
-<label x="27.94" y="15.24" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="27.94" y="15.24" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="SCK"/>
@@ -17403,7 +17405,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <segment>
 <pinref part="U$4" gate="A" pin="SCK"/>
 <wire x1="190.5" y1="33.02" x2="193.04" y2="33.02" width="0.1524" layer="91"/>
-<label x="193.04" y="33.02" size="1.27" layer="95" xref="yes"/>
+<label x="193.04" y="33.02" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -17415,7 +17417,7 @@ temp thermometer 1-wire one-wire one wire</description>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT7/ICP/OC0B/ADC7)PA7"/>
+<pinref part="U1" gate="G$1" pin="(PCINT7/ICP/OC0B/ADC7)PA7"/>
 <wire x1="45.72" y1="-43.18" x2="48.26" y2="-43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -17427,9 +17429,9 @@ temp thermometer 1-wire one-wire one wire</description>
 </net>
 <net name="VSENSE" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT0/AREF/ADC0)PA0"/>
+<pinref part="U1" gate="G$1" pin="(PCINT0/AREF/ADC0)PA0"/>
 <wire x1="45.72" y1="-60.96" x2="48.26" y2="-60.96" width="0.1524" layer="91"/>
-<label x="48.26" y="-60.96" size="1.27" layer="95" xref="yes"/>
+<label x="48.26" y="-60.96" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
@@ -17437,12 +17439,12 @@ temp thermometer 1-wire one-wire one wire</description>
 <wire x1="101.6" y1="-7.62" x2="101.6" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="-7.62" x2="109.22" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="101.6" y="-7.62"/>
-<label x="109.22" y="-7.62" size="1.27" layer="95" font="fixed" xref="yes"/>
+<label x="109.22" y="-7.62" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 <net name="18B20_DQ" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="DQ"/>
+<pinref part="U5" gate="G$1" pin="DQ"/>
 <wire x1="182.88" y1="-40.64" x2="170.18" y2="-40.64" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="-40.64" x2="170.18" y2="-43.18" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="1"/>
@@ -17452,7 +17454,7 @@ temp thermometer 1-wire one-wire one wire</description>
 <label x="157.48" y="-43.18" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="(PCINT9/XTAL2)PB1"/>
+<pinref part="U1" gate="G$1" pin="(PCINT9/XTAL2)PB1"/>
 <wire x1="45.72" y1="-35.56" x2="48.26" y2="-35.56" width="0.1524" layer="91"/>
 <label x="48.26" y="-35.56" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
