@@ -16998,6 +16998,92 @@ temp thermometer 1-wire one-wire one wire</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Passives">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find resistors, capacitors, inductors, test points, jumper pads, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="PAD.02X.02">
+<smd name="P$1" x="0" y="0" dx="0.508" dy="0.508" layer="1"/>
+</package>
+<package name="PAD.03X.03">
+<smd name="P$1" x="0" y="0" dx="0.762" dy="0.762" layer="1" roundness="100" cream="no"/>
+</package>
+<package name="PAD.03X.05">
+<smd name="P$1" x="0" y="0" dx="1.27" dy="1.27" layer="1" roundness="100" cream="no"/>
+</package>
+<package name="PAD.03X.04">
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
+</package>
+<package name="TP_15TH">
+<pad name="P$1" x="0" y="0" drill="0.381" diameter="0.6096" stop="no"/>
+<circle x="0" y="0" radius="0.381" width="0" layer="30"/>
+</package>
+</packages>
+<symbols>
+<symbol name="TEST-POINT">
+<wire x1="2.54" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="3.302" y1="0.762" x2="3.302" y2="-0.762" width="0.1524" layer="94" curve="180"/>
+<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;Name</text>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;Value</text>
+<pin name="1" x="0" y="0" visible="off" length="point" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="TEST-POINT" prefix="TP">
+<description>Bare copper test points for troubleshooting or ICT</description>
+<gates>
+<gate name="G$1" symbol="TEST-POINT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="2" package="PAD.02X.02">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3" package="PAD.03X.03">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3X5" package="PAD.03X.05">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3X4" package="PAD.03X.04">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="TP_15TH_THRU" package="TP_15TH">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -17047,7 +17133,13 @@ temp thermometer 1-wire one-wire one wire</description>
 <part name="U5" library="SparkFun-Sensors" deviceset="DS18B20" device=""/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="SUPPLY7" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="TP1" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
+<part name="TP2" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
+<part name="TP3" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
+<part name="TP4" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
+<part name="TP5" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
+<part name="TP6" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
+<part name="TP7" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
 </parts>
 <sheets>
 <sheet>
@@ -17096,7 +17188,21 @@ temp thermometer 1-wire one-wire one wire</description>
 <instance part="U5" gate="G$1" x="193.04" y="-43.18"/>
 <instance part="R7" gate="G$1" x="167.64" y="-38.1" rot="R90"/>
 <instance part="GND10" gate="1" x="180.34" y="-50.8"/>
-<instance part="SUPPLY7" gate="G$1" x="180.34" y="-33.02"/>
+<instance part="TP1" gate="G$1" x="134.62" y="48.26"/>
+<instance part="TP2" gate="G$1" x="17.78" y="35.56"/>
+<instance part="TP3" gate="G$1" x="68.58" y="35.56"/>
+<instance part="TP4" gate="G$1" x="200.66" y="50.8" smashed="yes">
+<attribute name="NAME" x="198.12" y="53.34" size="1.778" layer="95"/>
+</instance>
+<instance part="TP5" gate="G$1" x="200.66" y="45.72" smashed="yes">
+<attribute name="NAME" x="198.12" y="48.26" size="1.778" layer="95"/>
+</instance>
+<instance part="TP6" gate="G$1" x="200.66" y="40.64" smashed="yes">
+<attribute name="NAME" x="198.12" y="43.18" size="1.778" layer="95"/>
+</instance>
+<instance part="TP7" gate="G$1" x="200.66" y="35.56" smashed="yes">
+<attribute name="NAME" x="198.12" y="38.1" size="1.778" layer="95"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -17186,6 +17292,8 @@ temp thermometer 1-wire one-wire one wire</description>
 <wire x1="127" y1="48.26" x2="134.62" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="48.26" x2="134.62" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="+"/>
+<pinref part="TP1" gate="G$1" pin="1"/>
+<junction x="134.62" y="48.26"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="2"/>
@@ -17218,17 +17326,6 @@ temp thermometer 1-wire one-wire one wire</description>
 <wire x1="129.54" y1="-2.54" x2="129.54" y2="0" width="0.1524" layer="91"/>
 <label x="129.54" y="0" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
-<segment>
-<pinref part="SUPPLY7" gate="G$1" pin="VCC"/>
-<wire x1="180.34" y1="-33.02" x2="180.34" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="U5" gate="G$1" pin="VDD"/>
-<wire x1="180.34" y1="-35.56" x2="182.88" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="167.64" y1="-33.02" x2="177.8" y2="-33.02" width="0.1524" layer="91"/>
-<wire x1="177.8" y1="-33.02" x2="177.8" y2="-35.56" width="0.1524" layer="91"/>
-<wire x1="177.8" y1="-35.56" x2="180.34" y2="-35.56" width="0.1524" layer="91"/>
-<junction x="180.34" y="-35.56"/>
-</segment>
 </net>
 <net name="N$1" class="0">
 <segment>
@@ -17246,8 +17343,12 @@ temp thermometer 1-wire one-wire one wire</description>
 </segment>
 <segment>
 <pinref part="U$4" gate="A" pin="MISO"/>
-<wire x1="190.5" y1="38.1" x2="193.04" y2="38.1" width="0.1524" layer="91"/>
-<label x="193.04" y="38.1" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="190.5" y1="38.1" x2="200.66" y2="38.1" width="0.1524" layer="91"/>
+<label x="205.74" y="38.1" size="1.27" layer="95" font="vector" xref="yes"/>
+<pinref part="TP6" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="38.1" x2="205.74" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="40.64" x2="200.66" y2="38.1" width="0.1524" layer="91"/>
+<junction x="200.66" y="38.1"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="(PCINT5/OC1B/MISO/DO/ADC5)PA5"/>
@@ -17275,8 +17376,12 @@ temp thermometer 1-wire one-wire one wire</description>
 </segment>
 <segment>
 <pinref part="U$4" gate="A" pin="MOSI"/>
-<wire x1="190.5" y1="43.18" x2="193.04" y2="43.18" width="0.1524" layer="91"/>
-<label x="193.04" y="43.18" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="190.5" y1="43.18" x2="200.66" y2="43.18" width="0.1524" layer="91"/>
+<label x="205.74" y="43.18" size="1.27" layer="95" font="vector" xref="yes"/>
+<pinref part="TP5" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="43.18" x2="205.74" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="45.72" x2="200.66" y2="43.18" width="0.1524" layer="91"/>
+<junction x="200.66" y="43.18"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="(PCINT6/OC1A/SDA/MOSI/ADC6)PA6"/>
@@ -17291,7 +17396,8 @@ temp thermometer 1-wire one-wire one wire</description>
 </net>
 <net name="EN" class="0">
 <segment>
-<wire x1="55.88" y1="40.64" x2="73.66" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="40.64" x2="63.5" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="40.64" x2="73.66" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="40.64" x2="81.28" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="40.64" x2="81.28" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="EN"/>
@@ -17299,6 +17405,10 @@ temp thermometer 1-wire one-wire one wire</description>
 <pinref part="R3" gate="G$1" pin="1"/>
 <junction x="73.66" y="40.64"/>
 <label x="55.88" y="40.64" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
+<pinref part="TP3" gate="G$1" pin="1"/>
+<wire x1="68.58" y1="35.56" x2="63.5" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="35.56" x2="63.5" y2="40.64" width="0.1524" layer="91"/>
+<junction x="63.5" y="40.64"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="(PCINT3/T0/ADC3)PA3"/>
@@ -17353,8 +17463,12 @@ temp thermometer 1-wire one-wire one wire</description>
 <net name="RFM_SS" class="0">
 <segment>
 <pinref part="U$4" gate="A" pin="NSS"/>
-<wire x1="190.5" y1="48.26" x2="193.04" y2="48.26" width="0.1524" layer="91"/>
-<label x="193.04" y="48.26" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="190.5" y1="48.26" x2="200.66" y2="48.26" width="0.1524" layer="91"/>
+<label x="205.74" y="48.26" size="1.27" layer="95" font="vector" xref="yes"/>
+<pinref part="TP4" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="48.26" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="50.8" x2="200.66" y2="48.26" width="0.1524" layer="91"/>
+<junction x="200.66" y="48.26"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="(PCINT2/AIN1/ADC2)PA2"/>
@@ -17384,6 +17498,9 @@ temp thermometer 1-wire one-wire one wire</description>
 <pinref part="U3" gate="G$1" pin="DETECT"/>
 <wire x1="12.7" y1="43.18" x2="15.24" y2="43.18" width="0.1524" layer="91"/>
 <label x="15.24" y="43.18" size="1.27" layer="95" font="vector" xref="yes"/>
+<pinref part="TP2" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="35.56" x2="15.24" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="35.56" x2="15.24" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -17404,8 +17521,12 @@ temp thermometer 1-wire one-wire one wire</description>
 </segment>
 <segment>
 <pinref part="U$4" gate="A" pin="SCK"/>
-<wire x1="190.5" y1="33.02" x2="193.04" y2="33.02" width="0.1524" layer="91"/>
-<label x="193.04" y="33.02" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="190.5" y1="33.02" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
+<label x="205.74" y="33.02" size="1.27" layer="95" font="vector" xref="yes"/>
+<pinref part="TP7" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="33.02" x2="205.74" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="35.56" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
+<junction x="200.66" y="33.02"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -17413,12 +17534,6 @@ temp thermometer 1-wire one-wire one wire</description>
 <pinref part="D1" gate="G$1" pin="A"/>
 <pinref part="SOLAR" gate="G$1" pin="1"/>
 <wire x1="-17.78" y1="10.16" x2="-7.62" y2="10.16" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="(PCINT7/ICP/OC0B/ADC7)PA7"/>
-<wire x1="45.72" y1="-43.18" x2="48.26" y2="-43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -17457,6 +17572,25 @@ temp thermometer 1-wire one-wire one wire</description>
 <pinref part="U1" gate="G$1" pin="(PCINT9/XTAL2)PB1"/>
 <wire x1="45.72" y1="-35.56" x2="48.26" y2="-35.56" width="0.1524" layer="91"/>
 <label x="48.26" y="-35.56" size="1.27" layer="95" font="vector" xref="yes"/>
+</segment>
+</net>
+<net name="18B20_VDD" class="0">
+<segment>
+<pinref part="U5" gate="G$1" pin="VDD"/>
+<wire x1="180.34" y1="-35.56" x2="182.88" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="167.64" y1="-33.02" x2="172.72" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="-33.02" x2="177.8" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="-33.02" x2="177.8" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="-35.56" x2="180.34" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="-33.02" x2="172.72" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="172.72" y="-33.02"/>
+<label x="172.72" y="-30.48" size="1.27" layer="95" font="vector" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="(PCINT7/ICP/OC0B/ADC7)PA7"/>
+<wire x1="45.72" y1="-43.18" x2="48.26" y2="-43.18" width="0.1524" layer="91"/>
+<label x="48.26" y="-43.18" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 </net>
 </nets>
