@@ -173,6 +173,9 @@
 <text x="11.176" y="5.842" size="1.27" layer="22" font="vector" ratio="15" rot="MR0">ukhas.net</text>
 <text x="11.176" y="4.064" size="1.27" layer="22" font="vector" ratio="15" rot="MR0">fc-node3</text>
 <text x="32.258" y="0.508" size="2.54" layer="21" font="fixed" ratio="15">fc3</text>
+<text x="42.164" y="12.446" size="1.27" layer="22" font="vector" ratio="15" rot="MR0">-</text>
+<text x="40.132" y="12.446" size="1.27" layer="22" font="vector" ratio="15" rot="MR0">DQ</text>
+<text x="37.084" y="12.446" size="1.27" layer="22" font="vector" ratio="15" rot="MR0">+</text>
 </plain>
 <libraries>
 <library name="ukhas">
