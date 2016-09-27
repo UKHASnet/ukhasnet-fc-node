@@ -4,12 +4,14 @@
  * Jon Sowman 2015
  */
 
+#include <stdio.h>
+#include <string.h>
+
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/sleep.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
-#include <string.h>
 
 #include "RFM69.h"
 #include "RFM69Config.h"
