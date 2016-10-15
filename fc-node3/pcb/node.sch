@@ -17140,6 +17140,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="TP5" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
 <part name="TP6" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
 <part name="TP7" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="R0603"/>
+<part name="R9" library="rcl" deviceset="R-EU_" device="R0603"/>
+<part name="SUPPLY7" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17203,6 +17206,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="TP7" gate="G$1" x="200.66" y="35.56" smashed="yes">
 <attribute name="NAME" x="198.12" y="38.1" size="1.778" layer="95"/>
 </instance>
+<instance part="R8" gate="G$1" x="93.98" y="-40.64" rot="R90"/>
+<instance part="R9" gate="G$1" x="96.52" y="-40.64" rot="R90"/>
+<instance part="SUPPLY7" gate="G$1" x="93.98" y="-33.02"/>
 </instances>
 <busses>
 </busses>
@@ -17326,6 +17332,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="129.54" y1="-2.54" x2="129.54" y2="0" width="0.1524" layer="91"/>
 <label x="129.54" y="0" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
+<segment>
+<pinref part="SUPPLY7" gate="G$1" pin="VCC"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="93.98" y1="-33.02" x2="93.98" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="96.52" y1="-35.56" x2="93.98" y2="-35.56" width="0.1524" layer="91"/>
+<junction x="93.98" y="-35.56"/>
+</segment>
 </net>
 <net name="N$1" class="0">
 <segment>
@@ -17391,7 +17405,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="IC1" gate="G$1" pin="DATA"/>
 <wire x1="99.06" y1="-50.8" x2="96.52" y2="-50.8" width="0.1524" layer="91"/>
-<label x="96.52" y="-50.8" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="88.9" y="-50.8" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="-50.8" x2="88.9" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="-45.72" x2="96.52" y2="-50.8" width="0.1524" layer="91"/>
+<junction x="96.52" y="-50.8"/>
 </segment>
 </net>
 <net name="EN" class="0">
@@ -17516,8 +17534,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="SCK"/>
-<wire x1="99.06" y1="-48.26" x2="96.52" y2="-48.26" width="0.1524" layer="91"/>
-<label x="96.52" y="-48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="99.06" y1="-48.26" x2="93.98" y2="-48.26" width="0.1524" layer="91"/>
+<label x="88.9" y="-48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="93.98" y1="-48.26" x2="88.9" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="-45.72" x2="93.98" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="93.98" y="-48.26"/>
 </segment>
 <segment>
 <pinref part="U$4" gate="A" pin="SCK"/>

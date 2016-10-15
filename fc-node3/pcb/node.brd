@@ -1944,6 +1944,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <element name="TP5" library="SparkFun-Passives" package="PAD.03X.03" value="TEST-POINT3" x="38.354" y="3.302" rot="MR0"/>
 <element name="TP6" library="SparkFun-Passives" package="PAD.03X.03" value="TEST-POINT3" x="45.212" y="7.112" rot="MR0"/>
 <element name="TP7" library="SparkFun-Passives" package="PAD.03X.03" value="TEST-POINT3" x="43.942" y="7.112" rot="MR0"/>
+<element name="R8" library="rcl" package="R0603" value="" x="0.254" y="-17.526"/>
+<element name="R9" library="rcl" package="R0603" value="" x="0.254" y="-21.082"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2112,6 +2114,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="36.576" y1="5.461" x2="37.553" y2="5.461" width="0.3048" layer="1"/>
 <wire x1="36.664" y1="4.572" x2="36.664" y2="5.373" width="0.3048" layer="1"/>
 <wire x1="36.664" y1="5.373" x2="36.576" y2="5.461" width="0.3048" layer="1"/>
+<contactref element="R8" pad="2"/>
+<contactref element="R9" pad="2"/>
+<wire x1="1.104" y1="-17.526" x2="1.104" y2="-21.082" width="0" layer="19" extent="1-1"/>
+<wire x1="10.922" y1="2.794" x2="1.104" y2="-17.526" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="DF" pad="P$2"/>
@@ -2208,6 +2214,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="31.115" y1="4.572" x2="33.02" y2="2.667" width="0.3048" layer="1"/>
 <wire x1="33.02" y1="2.667" x2="33.274" y2="2.413" width="0.3048" layer="1"/>
 <wire x1="33.274" y1="2.413" x2="33.274" y2="2.032" width="0.3048" layer="1"/>
+<contactref element="R9" pad="1"/>
+<wire x1="-0.596" y1="-21.082" x2="25.4" y2="5.08" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="EN">
 <contactref element="U2" pad="3"/>
@@ -2410,6 +2418,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="TP7" pad="P$1"/>
 <wire x1="43.942" y1="7.112" x2="43.942" y2="5.842" width="0.3048" layer="16"/>
 <wire x1="43.942" y1="5.842" x2="43.18" y2="5.08" width="0.3048" layer="16"/>
+<contactref element="R8" pad="1"/>
+<wire x1="-0.596" y1="-17.526" x2="25.654" y2="1.524" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="SOLAR" pad="1"/>
