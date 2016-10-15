@@ -104,7 +104,7 @@ int main()
             *p = '\0';
 
             // Send the packet
-            rf69_send((uint8_t*)packetbuf, strlen(packetbuf), 10); 
+            rf69_send((uint8_t*)packetbuf, strlen(packetbuf), 13); 
             // Delay to allow the cap to recharge a bit extra after tx,
             // since it takes a little while after rf69_send() exits
             // for the PA to fully turn off and stop drawing current

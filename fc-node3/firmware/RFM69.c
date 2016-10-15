@@ -289,9 +289,9 @@ void rf69_send(const uint8_t* data, uint8_t len, uint8_t power)
     if(power <= 13)
     {
         // Set PA Level
-        paLevel = power + 18;
+        paLevel = power + 14;
         rf69_spiWrite(RFM69_REG_11_PA_LEVEL, 
-                RF_PALEVEL_PA0_OFF | RF_PALEVEL_PA1_ON | RF_PALEVEL_PA2_OFF | paLevel);        
+                RF_PALEVEL_PA0_OFF | RF_PALEVEL_PA1_ON | RF_PALEVEL_PA2_ON | paLevel);        
     } else {
         // Disable Over Current Protection
         rf69_spiWrite(RFM69_REG_13_OCP, RF_OCP_OFF);
