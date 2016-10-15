@@ -29,7 +29,7 @@
 // Node configuration options
 #define NODE_ID     "JH0"
 #define HOPS        "2"
-#define WAKE_FREQ    1
+#define WAKE_FREQ    3
 
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
 #define REG_ENABLE() do { EN_DDR &= ~_BV(EN_PIN); } while(0)
@@ -105,7 +105,7 @@ int main()
             *p = '\0';
 
             // Send the packet
-            rf69_send((uint8_t*)packetbuf, strlen(packetbuf), 10); 
+            rf69_send((uint8_t*)packetbuf, strlen(packetbuf), 17); 
             // Delay to allow the cap to recharge a bit extra after tx,
             // since it takes a little while after rf69_send() exits
             // for the PA to fully turn off and stop drawing current
