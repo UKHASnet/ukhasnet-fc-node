@@ -286,11 +286,12 @@ void rf69_send(const uint8_t* data, uint8_t len, uint8_t power)
     rf69_setMode(RFM69_MODE_TX);
 
     // Set up PA
-    if(power <= 17)
+    if(power <= 13)
     {
         // Set PA Level
-        paLevel = power + 14;
-	rf69_spiWrite(RFM69_REG_11_PA_LEVEL, RF_PALEVEL_PA0_OFF | RF_PALEVEL_PA1_ON | RF_PALEVEL_PA2_ON | paLevel);        
+        paLevel = power + 18;
+        rf69_spiWrite(RFM69_REG_11_PA_LEVEL, 
+                RF_PALEVEL_PA0_OFF | RF_PALEVEL_PA1_ON | RF_PALEVEL_PA2_OFF | paLevel);        
     } else {
         // Disable Over Current Protection
         rf69_spiWrite(RFM69_REG_13_OCP, RF_OCP_OFF);
@@ -299,7 +300,8 @@ void rf69_send(const uint8_t* data, uint8_t len, uint8_t power)
         rf69_spiWrite(RFM69_REG_5C_TEST_PA2, 0x7C);
         // Set PA Level
         paLevel = power + 11;
-	rf69_spiWrite(RFM69_REG_11_PA_LEVEL, RF_PALEVEL_PA0_OFF | RF_PALEVEL_PA1_ON | RF_PALEVEL_PA2_ON | paLevel);
+        rf69_spiWrite(RFM69_REG_11_PA_LEVEL, 
+                RF_PALEVEL_PA0_OFF | RF_PALEVEL_PA1_ON | RF_PALEVEL_PA2_ON | paLevel);
     }
 
     // Wait for PA ramp-up
@@ -322,7 +324,7 @@ void rf69_send(const uint8_t* data, uint8_t len, uint8_t power)
     rf69_setMode(oldMode);
 
     // If we were in high power, switch off High Power Registers
-    if(power > 17)
+    if(power > 13)
     {
         // Disable High Power Registers
         rf69_spiWrite(RFM69_REG_5A_TEST_PA1, 0x55);

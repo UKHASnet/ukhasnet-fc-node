@@ -22,14 +22,14 @@
 #define EN_PIN 3
 
 // Temperature sensor pins
-#define DS18B20_VDD_DDR DDRA
-#define DS18B20_VDD_PORT PORTA
-#define DS18B20_VDD_PIN 7
+#define DS18B20_VDD_DDR     DDRA
+#define DS18B20_VDD_PORT    PORTA
+#define DS18B20_VDD_PIN     7
 
 // Node configuration options
 #define NODE_ID     "JH0"
 #define HOPS        "2"
-#define WAKE_FREQ    3
+#define WAKE_FREQ    5
 
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
 #define REG_ENABLE() do { EN_DDR &= ~_BV(EN_PIN); } while(0)
@@ -44,7 +44,8 @@ static char seqid = 'a';
 static uint8_t wakes = WAKE_FREQ;
 
 static char packetbuf[64];
-static char* p;
+static int8_t temp_dec, temp_frac;
+static char *p;
 
 // Get the voltage on the battery terminals in mV
 uint16_t get_batt_voltage(void);
@@ -52,8 +53,6 @@ void get_temperature(int8_t *dec, int8_t *frac);
 
 int main()
 {
-    int8_t temp_dec, temp_frac;
-
     /* disable watchdog */
     wdt_disable();
 
@@ -105,7 +104,7 @@ int main()
             *p = '\0';
 
             // Send the packet
-            rf69_send((uint8_t*)packetbuf, strlen(packetbuf), 17); 
+            rf69_send((uint8_t*)packetbuf, strlen(packetbuf), 10); 
             // Delay to allow the cap to recharge a bit extra after tx,
             // since it takes a little while after rf69_send() exits
             // for the PA to fully turn off and stop drawing current
