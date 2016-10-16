@@ -1,7 +1,13 @@
 /**
- * UKHASnet scraper node
+ * UKHASnet film canister node
  *
- * Jon Sowman 2015
+ * A node that sleeps using a reservoir capacitor, so that a boost regulator
+ * only runs around 0.1% of the time. Runs for years on a single AA/AAA.
+ *
+ * Jon Sowman 2015-16
+ * jon+github@jonsowman.com
+ *
+ * https://ukhas.net
  */
 
 #include <stdio.h>
@@ -18,6 +24,7 @@
 
 #include "ds18b20.h"
 
+// Regulator enable pin
 #define EN_DDR DDRA
 #define EN_PIN 3
 
@@ -53,7 +60,7 @@ void get_temperature(int8_t *dec, int8_t *frac);
 
 int main()
 {
-    /* disable watchdog */
+    /* Disable watchdog */
     wdt_disable();
 
     /* EN pin should be 0 */
@@ -76,8 +83,10 @@ int main()
     /* All periphs off */
     PRR |= _BV(PRTIM0) | _BV(PRUSI) | _BV(PRADC);
 
+    // Main loop of sleeping and transmitting
     while(1)
     {
+        // Wakes will be roughly every 30sec depending on exact hardware
         if(wakes == WAKE_FREQ)
         {
             // Construct and send the packet
@@ -139,17 +148,6 @@ int main()
         GIMSK = 0x00;
         sleep_disable();
 
-        /*
-        // Enable the watchdog and sleep for 8 seconds
-        wdt_enable(WDTO_8S);
-        WDTCSR |= (1 << WDIE);
-        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-        sleep_enable();
-        sei();
-        sleep_cpu();
-        sleep_disable();
-        */
-        
         // Wait until voltage detector says we're OK
         /*while((PINB & _BV(2)) == 0);*/
 
@@ -161,8 +159,9 @@ int main()
 }
 
 /**
- * Return the temperature from the onboard DS18B20
- * @returns A temperature in degrees C
+ * Return the temperature from the onboard DS18B20 to precision 0.1degC
+ * @param dec A uint8_t pointer to the decimal part of the temperature
+ * @param frac A uint8_t pointer to the fractional part
  */
 void get_temperature(int8_t *dec, int8_t *frac)
 {
@@ -181,6 +180,8 @@ void get_temperature(int8_t *dec, int8_t *frac)
     // Return
     *dec = (int8_t)d;
     *frac = (int8_t)(d*10 - *dec*10);
+    
+    // If temperature is <0, remove negative from fractional part
     if(*frac < 0) *frac = -*frac;
 }
 
@@ -216,16 +217,14 @@ uint16_t get_batt_voltage(void)
     return (uint16_t)((r*3300)/1024);
 }
 
-/* turn on reg */
+/* Turn on reg */
 ISR(EXT_INT0_vect)
 {
     // Voltage low, enable the reg
     REG_ENABLE();
 }
 
-/**
- *  * Watchdog interrupt
- *   */
+/* Watchdog interrupt */
 ISR(WATCHDOG_vect)
 {
     wdt_disable();
