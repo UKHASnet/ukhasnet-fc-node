@@ -2,7 +2,7 @@
  * UKHASnet film canister node
  *
  * A node that sleeps using a reservoir capacitor, so that a boost regulator
- * only runs around 0.1% of the time. Runs for years on a single AA/AAA.
+ * only runs around 0.1% of the time. Runs for ages on a single AA/AAA.
  *
  * Jon Sowman 2015-16
  * jon+github@jonsowman.com

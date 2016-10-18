@@ -1,6 +1,6 @@
 # Name: Makefile
-# Project: SunJar
-# Author: Jon Sowman <jon@hexoc.com> 
+# Project: ukhasnet-fc-node
+# Author: Jon Sowman <jon+github@jonsowman.com>
 
 # DEVICE ....... The AVR device you compile for
 # CLOCK ........ Target AVR clock rate in Hertz
