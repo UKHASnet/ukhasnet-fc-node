@@ -33,10 +33,13 @@
 #define DS18B20_VDD_PORT    PORTA
 #define DS18B20_VDD_PIN     7
 
+/* Comment the following line out to fall back to watchdog */
+//#define USE_VDETECT
+
 // Node configuration options
-#define NODE_ID         "JH0"
-#define HOPS            "2"
-#define WAKE_FREQ       7
+#define NODE_ID         "JH1"
+#define HOPS            "1"
+#define WAKE_FREQ       30
 #define TX_POWER_DBM    5
 
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
@@ -63,6 +66,9 @@ int main()
 {
     /* Disable watchdog */
     wdt_disable();
+
+    /* Wait for cap to charge */
+    _delay_ms(1000);
 
     /* EN pin should be 0 */
     PORTA &= ~_BV(EN_PIN);
@@ -134,6 +140,7 @@ int main()
             wakes++;
         }
 
+#ifdef USE_VDETECT
         // Interrupt on INT0 low level
         MCUCR &= ~(_BV(ISC01) | _BV(ISC00));
         GIMSK |= _BV(INT0);
@@ -149,11 +156,19 @@ int main()
         GIMSK = 0x00;
         sleep_disable();
 
-        // Wait until voltage detector says we're OK
-        /*while((PINB & _BV(2)) == 0);*/
-
-        // then wait a little longer to make sure the cap is charged
+        // Then wait a little longer to make sure the cap is charged
         _delay_ms(50);
+#else
+        // Enable the watchdog and sleep for 8 seconds
+        wdt_enable(WDTO_8S);
+        WDTCSR |= (1 << WDIE);
+        set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+        sleep_enable();
+        sei();
+        sleep_cpu();   
+        sleep_disable();
+
+#endif /* USE_VDETECT */
     }
 
     return 0;

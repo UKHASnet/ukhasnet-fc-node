@@ -47,7 +47,7 @@ bool rf69_init(void)
     /* In mode 0, SCK idles low */
     SPI_PORT &= ~SPI_SCK;
 
-    _delay_ms(1);
+    _delay_ms(10);
     
     // Set up device
     for(i = 0; CONFIG[i][0] != 255; i++)
