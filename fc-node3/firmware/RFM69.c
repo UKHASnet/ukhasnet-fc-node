@@ -236,33 +236,6 @@ void rf69_setMode(const uint8_t newMode)
     _mode = newMode;
 }
 
-/*boolean RFM69::checkRx()*/
-/*{*/
-    /*// Check IRQ register for payloadready flag (indicates RXed packet waiting in FIFO)*/
-    /*if(spiRead(RFM69_REG_28_IRQ_FLAGS2) & RF_IRQFLAGS2_PAYLOADREADY) {*/
-        /*// Get packet length from first byte of FIFO*/
-        /*_bufLen = spiRead(RFM69_REG_00_FIFO)+1;*/
-        /*// Read FIFO into our Buffer*/
-        /*spiBurstRead(RFM69_REG_00_FIFO, _buf, RFM69_FIFO_SIZE);*/
-        /*// Read RSSI register (should be of the packet? - TEST THIS)*/
-        /*_lastRssi = -(spiRead(RFM69_REG_24_RSSI_VALUE)/2);*/
-        /*// Clear the radio FIFO (found in HopeRF demo code)*/
-        /*clearFifo();*/
-        /*return true;*/
-    /*}*/
-    
-    /*return false;*/
-/*}*/
-
-/*void RFM69::recv(uint8_t* buf, uint8_t* len)*/
-/*{*/
-    /*// Copy RX Buffer to byref Buffer*/
-    /*memcpy(buf, _buf, _bufLen);*/
-    /**len = _bufLen;*/
-    /*// Clear RX Buffer*/
-    /*_bufLen = 0;*/
-/*}*/
-
 /**
  * Send a packet using the RFM69 radio.
  * @param data The data buffer that contains the string to transmit
@@ -272,7 +245,8 @@ void rf69_setMode(const uint8_t newMode)
  */
 void rf69_send(const uint8_t* data, uint8_t len, uint8_t power)
 {
-    uint8_t oldMode, paLevel;
+    uint8_t oldMode, paLevel, timeout;
+
     // power is TX Power in dBmW (valid values are 2dBmW-20dBmW)
     if(power < 2 || power > 20)
     {
@@ -305,19 +279,25 @@ void rf69_send(const uint8_t* data, uint8_t len, uint8_t power)
     }
 
     // Wait for PA ramp-up
+    timeout = 255;
     while(!(rf69_spiRead(RFM69_REG_27_IRQ_FLAGS1) & RF_IRQFLAGS1_TXREADY))
     {
-        _delay_ms(1);
+        _delay_ms(5);
+        timeout--;
     }
+
 
     // Throw Buffer into FIFO, packet transmission will start automatically
     rf69_spiFifoWrite(data, len);
 
     // Wait for packet to be sent
+    timeout = 255;
     uint8_t a = rf69_spiRead(RFM69_REG_28_IRQ_FLAGS2);
-    while(!(a & RF_IRQFLAGS2_PACKETSENT))
+    while(!(a & RF_IRQFLAGS2_PACKETSENT) && timeout)
     {
         a = rf69_spiRead(RFM69_REG_28_IRQ_FLAGS2);
+        _delay_ms(5);
+        timeout--;
     }
 
     // Return Transceiver to original mode

@@ -25,8 +25,9 @@
 #include "ds18b20.h"
 
 // Regulator enable pin
-#define EN_DDR DDRA
-#define EN_PIN 3
+#define EN_DDR  DDRA
+#define EN_PORT PORTA
+#define EN_PIN  3
 
 // Temperature sensor pins
 #define DS18B20_VDD_DDR     DDRA
@@ -34,13 +35,13 @@
 #define DS18B20_VDD_PIN     7
 
 /* Comment the following line out to fall back to watchdog */
-//#define USE_VDETECT
+#define USE_VDETECT
 
 // Node configuration options
 #define NODE_ID         "JH1"
 #define HOPS            "1"
-#define WAKE_FREQ       30
-#define TX_POWER_DBM    5
+#define WAKE_FREQ       5
+#define TX_POWER_DBM    3
 
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
 #define REG_ENABLE() do { EN_DDR &= ~_BV(EN_PIN); } while(0)
@@ -71,8 +72,8 @@ int main()
     _delay_ms(1000);
 
     /* EN pin should be 0 */
-    PORTA &= ~_BV(EN_PIN);
-
+    EN_PORT &= ~_BV(EN_PIN);
+    
     /* EN on */
     REG_ENABLE();
 
@@ -121,6 +122,7 @@ int main()
 
             // Send the packet
             rf69_send((uint8_t*)packetbuf, strlen(packetbuf), TX_POWER_DBM); 
+
             // Delay to allow the cap to recharge a bit extra after tx,
             // since it takes a little while after rf69_send() exits
             // for the PA to fully turn off and stop drawing current
