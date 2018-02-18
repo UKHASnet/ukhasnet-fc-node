@@ -90,8 +90,8 @@
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="no" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="113" name="IDFDebug" color="7" fill="1" visible="no" active="yes"/>
-<layer number="114" name="Badge_Outline" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="114" name="Badge_Outline" color="7" fill="1" visible="no" active="yes"/>
+<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="no" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
@@ -1762,17 +1762,17 @@ MAX3223-MAX3243.pdf</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U2" library="ukhas" package="SOT23-6" value="MCP1640" x="51.054" y="14.224" smashed="yes">
-<attribute name="VALUE" x="49.657" y="11.552" size="1.016" layer="27" ratio="10"/>
-<attribute name="NAME" x="52.451" y="14.808" size="1.27" layer="25" font="vector" ratio="15" rot="R180"/>
+<element name="U2" library="ukhas" package="SOT23-6" value="MCP1640" x="48.26" y="14.732" smashed="yes" rot="R90">
+<attribute name="VALUE" x="50.932" y="13.335" size="1.016" layer="27" ratio="10" rot="R90"/>
+<attribute name="NAME" x="47.676" y="16.129" size="1.27" layer="25" font="vector" ratio="15" rot="R270"/>
 </element>
-<element name="R1" library="rcl" package="R0603" value="" x="48.26" y="14.224" smashed="yes" rot="R270">
-<attribute name="NAME" x="47.625" y="12.827" size="1.27" layer="25" font="vector" ratio="15" rot="R270"/>
-<attribute name="VALUE" x="46.355" y="14.859" size="1.27" layer="27" rot="R270"/>
+<element name="R1" library="rcl" package="R0603" value="" x="48.26" y="11.938" smashed="yes">
+<attribute name="NAME" x="49.657" y="11.303" size="1.27" layer="25" font="vector" ratio="15"/>
+<attribute name="VALUE" x="47.625" y="10.033" size="1.27" layer="27"/>
 </element>
-<element name="R2" library="rcl" package="R0603" value="" x="46.736" y="14.224" smashed="yes" rot="R270">
-<attribute name="NAME" x="46.101" y="12.827" size="1.27" layer="25" font="vector" ratio="15" rot="R270"/>
-<attribute name="VALUE" x="44.831" y="14.859" size="1.27" layer="27" rot="R270"/>
+<element name="R2" library="rcl" package="R0603" value="" x="48.26" y="10.16" smashed="yes">
+<attribute name="NAME" x="49.657" y="9.525" size="1.27" layer="25" font="vector" ratio="15"/>
+<attribute name="VALUE" x="47.625" y="8.255" size="1.27" layer="27"/>
 </element>
 <element name="U$4" library="hoperf" package="RFM" value="RFM69HW" x="21.59" y="0.254" smashed="yes">
 <attribute name="VALUE" x="24.13" y="-2.44475" size="1.778" layer="27"/>
@@ -1780,27 +1780,27 @@ MAX3223-MAX3243.pdf</description>
 <element name="JP1" library="SparkFun-Connectors" package="1X01" value="M01PTH" x="52.07" y="1.848" smashed="yes">
 <attribute name="VALUE" x="50.8" y="-1.327" size="1.27" layer="27"/>
 </element>
-<element name="C2" library="rcl" package="C0603" value="4u7" x="45.212" y="14.224" smashed="yes" rot="R270">
-<attribute name="NAME" x="45.847" y="15.621" size="1.27" layer="25" font="vector" ratio="15" rot="R90"/>
-<attribute name="VALUE" x="43.307" y="14.859" size="1.27" layer="27" rot="R270"/>
+<element name="C2" library="rcl" package="C0603" value="4u7" x="48.26" y="8.382" smashed="yes">
+<attribute name="NAME" x="46.863" y="9.017" size="1.27" layer="25" font="vector" ratio="15" rot="R180"/>
+<attribute name="VALUE" x="47.625" y="6.477" size="1.27" layer="27"/>
 </element>
-<element name="R4" library="rcl" package="R0603" value="" x="44.704" y="4.318" smashed="yes" rot="R90">
-<attribute name="NAME" x="44.069" y="2.921" size="1.27" layer="25" font="vector" ratio="15" rot="R270"/>
-<attribute name="VALUE" x="46.609" y="3.683" size="1.27" layer="27" rot="R90"/>
+<element name="R4" library="rcl" package="R0603" value="" x="48.26" y="6.604" smashed="yes" rot="R180">
+<attribute name="NAME" x="49.657" y="5.969" size="1.27" layer="25" font="vector" ratio="15"/>
+<attribute name="VALUE" x="48.895" y="8.509" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="TP1" library="SparkFun-Passives" package="PAD.03X.03" value="TEST-POINT3" x="19.685" y="24.511"/>
 <element name="TP4" library="SparkFun-Passives" package="PAD.03X.03" value="TEST-POINT3" x="37.592" y="26.162" rot="MR0"/>
 <element name="TP5" library="SparkFun-Passives" package="PAD.03X.03" value="TEST-POINT3" x="34.798" y="25.146" rot="MR0"/>
 <element name="TP6" library="SparkFun-Passives" package="PAD.03X.03" value="TEST-POINT3" x="38.862" y="24.384" rot="MR0"/>
 <element name="TP7" library="SparkFun-Passives" package="PAD.03X.03" value="TEST-POINT3" x="31.75" y="24.638" rot="MR0"/>
-<element name="D2" library="SparkFun-LED" package="WS2812B" value="WS2812B" x="7.62" y="3.048">
-<attribute name="PROD_ID" value="DIO-12503" x="7.62" y="3.048" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
+<element name="D2" library="SparkFun-LED" package="WS2812B" value="WS2812B" x="16.764" y="4.318" rot="R90">
+<attribute name="PROD_ID" value="DIO-12503" x="16.764" y="4.318" size="1.778" layer="27" font="vector" ratio="15" rot="R90" display="off"/>
 </element>
-<element name="L1" library="passives-7351" package="L0603-N" value="4.7u" x="51.054" y="11.43" rot="R180"/>
-<element name="BAT2" library="SparkFun" package="BATTERY-AA" value="" x="26.924" y="8.636" rot="MR0"/>
-<element name="C1" library="rcl" package="C0603" value="10u" x="47.244" y="11.43" rot="R180"/>
+<element name="L1" library="passives-7351" package="L0603-N" value="4.7u" x="51.562" y="14.732" rot="R270"/>
+<element name="BAT2" library="SparkFun" package="BATTERY-AA" value="" x="26.924" y="8.5" rot="MR0"/>
+<element name="C1" library="rcl" package="C0603" value="10u" x="51.562" y="11.938"/>
 <element name="U$1" library="dtb" package="TSSOP20" value="STM32F030F4" x="16.002" y="12.954" rot="R90"/>
-<element name="TC1" library="TagConnect" package="TC2030-IDC-NL" value="TC2030-IDC-NL" x="15.748" y="2.54"/>
+<element name="TC1" library="TagConnect" package="TC2030-IDC-NL" value="TC2030-IDC-NL" x="11.43" y="4.064" rot="R270"/>
 <element name="C3" library="passives-7351" package="C0603-N" value="100n" x="11.176" y="14.732" rot="R90"/>
 </elements>
 <signals>
@@ -1834,7 +1834,6 @@ MAX3223-MAX3243.pdf</description>
 <contactref element="U2" pad="5"/>
 <contactref element="R1" pad="2"/>
 <contactref element="U$4" pad="VCC"/>
-<contactref element="R4" pad="2"/>
 <contactref element="TP1" pad="P$1"/>
 <contactref element="D2" pad="1"/>
 <contactref element="C1" pad="1"/>
@@ -1842,21 +1841,22 @@ MAX3223-MAX3243.pdf</description>
 <contactref element="U$1" pad="5"/>
 <contactref element="TC1" pad="1"/>
 <contactref element="C3" pad="1"/>
-<wire x1="48.26" y1="13.374" x2="51.054" y2="15.374" width="0" layer="19" extent="1-1"/>
-<wire x1="48.094" y1="11.43" x2="48.26" y2="13.374" width="0" layer="19" extent="1-1"/>
-<wire x1="44.704" y1="5.168" x2="48.094" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="21.59" y1="1.3015" x2="44.704" y2="5.168" width="0" layer="19" extent="1-1"/>
-<wire x1="14.478" y1="1.905" x2="21.59" y2="1.3015" width="0" layer="19" extent="1-1"/>
-<wire x1="10.197" y1="1.448" x2="14.478" y2="1.905" width="0" layer="19" extent="1-1"/>
-<wire x1="13.0842" y1="12.629" x2="14.478" y2="1.905" width="0" layer="19" extent="1-1"/>
+<contactref element="R4" pad="2"/>
+<wire x1="49.11" y1="11.938" x2="47.11" y2="14.732" width="0" layer="19" extent="1-1"/>
+<wire x1="50.712" y1="11.938" x2="49.11" y2="11.938" width="0" layer="19" extent="1-1"/>
+<wire x1="47.41" y1="6.604" x2="49.11" y2="11.938" width="0" layer="19" extent="1-1"/>
+<wire x1="21.59" y1="1.3015" x2="47.41" y2="6.604" width="0" layer="19" extent="1-1"/>
+<wire x1="18.364" y1="6.895" x2="21.59" y2="1.3015" width="0" layer="19" extent="1-1"/>
+<wire x1="18.9198" y1="12.629" x2="18.364" y2="6.895" width="0" layer="19" extent="1-1"/>
+<wire x1="13.0842" y1="12.629" x2="18.9198" y2="12.629" width="0" layer="19" extent="1-1"/>
 <wire x1="11.176" y1="13.932" x2="13.0842" y2="12.629" width="0" layer="19" extent="1-1"/>
-<wire x1="18.9198" y1="12.629" x2="13.0842" y2="12.629" width="0" layer="19" extent="1-1"/>
+<wire x1="10.795" y1="5.334" x2="13.0842" y2="12.629" width="0" layer="19" extent="1-1"/>
 <wire x1="19.685" y1="24.511" x2="18.9198" y2="12.629" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U2" pad="1"/>
 <contactref element="L1" pad="2"/>
-<wire x1="50.254" y1="11.43" x2="50.104" y2="13.074" width="0" layer="19" extent="1-1"/>
+<wire x1="49.41" y1="13.782" x2="51.562" y2="13.932" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MISO">
 <contactref element="U$4" pad="MISO"/>
@@ -1872,8 +1872,8 @@ MAX3223-MAX3243.pdf</description>
 <contactref element="R1" pad="1"/>
 <contactref element="R2" pad="2"/>
 <contactref element="U2" pad="4"/>
-<wire x1="48.26" y1="15.074" x2="52.004" y2="15.374" width="0" layer="19" extent="1-1"/>
-<wire x1="46.736" y1="13.374" x2="48.26" y2="15.074" width="0" layer="19" extent="1-1"/>
+<wire x1="47.41" y1="11.938" x2="47.11" y2="15.682" width="0" layer="19" extent="1-1"/>
+<wire x1="49.11" y1="10.16" x2="47.41" y2="11.938" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VBATT">
 <contactref element="U2" pad="6"/>
@@ -1881,17 +1881,17 @@ MAX3223-MAX3243.pdf</description>
 <contactref element="L1" pad="1"/>
 <contactref element="BAT2" pad="PWR@1"/>
 <contactref element="U2" pad="3"/>
-<wire x1="52.004" y1="13.074" x2="50.104" y2="15.374" width="0" layer="19" extent="1-1"/>
-<wire x1="51.854" y1="11.43" x2="52.004" y2="13.074" width="0" layer="19" extent="1-1"/>
-<wire x1="52.07" y1="8.636" x2="51.854" y2="11.43" width="0" layer="19" extent="1-1"/>
-<wire x1="45.212" y1="15.074" x2="50.104" y2="15.374" width="0" layer="19" extent="1-1"/>
+<wire x1="49.41" y1="15.682" x2="51.562" y2="15.532" width="0" layer="19" extent="1-1"/>
+<wire x1="47.11" y1="13.782" x2="49.41" y2="15.682" width="0" layer="19" extent="1-1"/>
+<wire x1="47.41" y1="8.382" x2="47.11" y2="13.782" width="0" layer="19" extent="1-1"/>
+<wire x1="52.07" y1="8.5" x2="47.41" y2="8.382" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RFM_SS">
 <contactref element="U$4" pad="NSS"/>
 <contactref element="R4" pad="1"/>
 <contactref element="TP4" pad="P$1"/>
 <wire x1="41.24125" y1="13.46025" x2="37.592" y2="26.162" width="0" layer="19" extent="1-16"/>
-<wire x1="44.704" y1="3.468" x2="41.24125" y2="13.46025" width="0" layer="19" extent="1-1"/>
+<wire x1="49.11" y1="6.604" x2="41.24125" y2="13.46025" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="JP1" pad="1"/>
@@ -1909,22 +1909,22 @@ MAX3223-MAX3243.pdf</description>
 <signal name="SWDAT">
 <contactref element="U$1" pad="19"/>
 <contactref element="TC1" pad="2"/>
-<wire x1="14.478" y1="3.175" x2="13.0842" y2="10.679" width="0" layer="19" extent="1-1"/>
+<wire x1="12.065" y1="5.334" x2="13.0842" y2="10.679" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SWCLK">
 <contactref element="U$1" pad="20"/>
 <contactref element="TC1" pad="4"/>
-<wire x1="15.748" y1="3.175" x2="13.0842" y2="10.029" width="0" layer="19" extent="1-1"/>
+<wire x1="12.065" y1="4.064" x2="13.0842" y2="10.029" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="NRST">
 <contactref element="U$1" pad="4"/>
 <contactref element="TC1" pad="3"/>
-<wire x1="15.748" y1="1.905" x2="18.9198" y2="11.979" width="0" layer="19" extent="1-1"/>
+<wire x1="10.795" y1="4.064" x2="18.9198" y2="11.979" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="LED_DO">
 <contactref element="U$1" pad="17"/>
 <contactref element="D2" pad="4"/>
-<wire x1="5.043" y1="1.448" x2="13.0842" y2="11.979" width="0" layer="19" extent="1-1"/>
+<wire x1="18.364" y1="1.741" x2="13.0842" y2="11.979" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
