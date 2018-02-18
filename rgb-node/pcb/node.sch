@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7671,10 +7671,6 @@ http://www.tag-connect.com</description>
 <part name="FRAME1" library="frames" deviceset="DINA4_L" device=""/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="TP1" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
-<part name="TP4" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
-<part name="TP5" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
-<part name="TP6" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
-<part name="TP7" library="SparkFun-Passives" deviceset="TEST-POINT" device="3"/>
 <part name="D2" library="SparkFun-LED" deviceset="WS2812B" device="" value="WS2812B"/>
 <part name="L1" library="passives-7351" deviceset="INDUCTOR" device="0603-N" value="4.7u"/>
 <part name="BAT2" library="SparkFun" deviceset="BATTERY" device="AA"/>
@@ -7711,18 +7707,6 @@ http://www.tag-connect.com</description>
 <instance part="FRAME1" gate="G$2" x="121.92" y="-101.6"/>
 <instance part="R4" gate="G$1" x="129.54" y="-7.62" rot="R90"/>
 <instance part="TP1" gate="G$1" x="134.62" y="48.26"/>
-<instance part="TP4" gate="G$1" x="200.66" y="50.8" smashed="yes">
-<attribute name="NAME" x="198.12" y="53.34" size="1.778" layer="95"/>
-</instance>
-<instance part="TP5" gate="G$1" x="200.66" y="45.72" smashed="yes">
-<attribute name="NAME" x="198.12" y="48.26" size="1.778" layer="95"/>
-</instance>
-<instance part="TP6" gate="G$1" x="200.66" y="40.64" smashed="yes">
-<attribute name="NAME" x="198.12" y="43.18" size="1.778" layer="95"/>
-</instance>
-<instance part="TP7" gate="G$1" x="200.66" y="35.56" smashed="yes">
-<attribute name="NAME" x="198.12" y="38.1" size="1.778" layer="95"/>
-</instance>
 <instance part="D2" gate="G$1" x="91.44" y="-5.08"/>
 <instance part="L1" gate="G$1" x="91.44" y="60.96"/>
 <instance part="BAT2" gate="G$1" x="-27.94" y="48.26" rot="R270"/>
@@ -7858,10 +7842,12 @@ http://www.tag-connect.com</description>
 <pinref part="U$4" gate="A" pin="MISO"/>
 <wire x1="190.5" y1="38.1" x2="200.66" y2="38.1" width="0.1524" layer="91"/>
 <label x="205.74" y="38.1" size="1.27" layer="95" font="vector" xref="yes"/>
-<pinref part="TP6" gate="G$1" pin="1"/>
 <wire x1="200.66" y1="38.1" x2="205.74" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="200.66" y1="40.64" x2="200.66" y2="38.1" width="0.1524" layer="91"/>
-<junction x="200.66" y="38.1"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA6"/>
+<wire x1="209.55" y1="-20.32" x2="210.82" y2="-20.32" width="0.1524" layer="91"/>
+<label x="210.82" y="-20.32" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
@@ -7869,10 +7855,12 @@ http://www.tag-connect.com</description>
 <pinref part="U$4" gate="A" pin="MOSI"/>
 <wire x1="190.5" y1="43.18" x2="200.66" y2="43.18" width="0.1524" layer="91"/>
 <label x="205.74" y="43.18" size="1.27" layer="95" font="vector" xref="yes"/>
-<pinref part="TP5" gate="G$1" pin="1"/>
 <wire x1="200.66" y1="43.18" x2="205.74" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="200.66" y1="45.72" x2="200.66" y2="43.18" width="0.1524" layer="91"/>
-<junction x="200.66" y="43.18"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA7"/>
+<wire x1="209.55" y1="-22.86" x2="210.82" y2="-22.86" width="0.1524" layer="91"/>
+<label x="210.82" y="-22.86" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -7913,15 +7901,17 @@ http://www.tag-connect.com</description>
 <pinref part="U$4" gate="A" pin="NSS"/>
 <wire x1="190.5" y1="48.26" x2="200.66" y2="48.26" width="0.1524" layer="91"/>
 <label x="205.74" y="48.26" size="1.27" layer="95" font="vector" xref="yes"/>
-<pinref part="TP4" gate="G$1" pin="1"/>
 <wire x1="200.66" y1="48.26" x2="205.74" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="200.66" y1="50.8" x2="200.66" y2="48.26" width="0.1524" layer="91"/>
-<junction x="200.66" y="48.26"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="129.54" y1="-12.7" x2="129.54" y2="-15.24" width="0.1524" layer="91"/>
 <label x="129.54" y="-15.24" size="1.27" layer="95" font="vector" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA4"/>
+<wire x1="209.55" y1="-15.24" x2="210.82" y2="-15.24" width="0.1524" layer="91"/>
+<label x="210.82" y="-15.24" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -7936,10 +7926,12 @@ http://www.tag-connect.com</description>
 <pinref part="U$4" gate="A" pin="SCK"/>
 <wire x1="190.5" y1="33.02" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
 <label x="205.74" y="33.02" size="1.27" layer="95" font="vector" xref="yes"/>
-<pinref part="TP7" gate="G$1" pin="1"/>
 <wire x1="200.66" y1="33.02" x2="205.74" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="200.66" y1="35.56" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
-<junction x="200.66" y="33.02"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA5"/>
+<wire x1="209.55" y1="-17.78" x2="210.82" y2="-17.78" width="0.1524" layer="91"/>
+<label x="210.82" y="-17.78" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$7" class="0">
