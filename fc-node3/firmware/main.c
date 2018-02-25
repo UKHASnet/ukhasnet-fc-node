@@ -4,7 +4,7 @@
  * A node that sleeps using a reservoir capacitor, so that a boost regulator
  * only runs around 0.1% of the time. Runs for ages on a single AA/AAA.
  *
- * Jon Sowman 2015-16
+ * Jon Sowman 2015-18
  * jon+github@jonsowman.com
  *
  * https://ukhas.net
@@ -34,14 +34,14 @@
 #define DS18B20_VDD_PORT    PORTA
 #define DS18B20_VDD_PIN     7
 
-/* Comment the following line out to fall back to watchdog */
-#define USE_VDETECT
+// Remove this line to fall back to watchdog
+#define MODE_BOOSTOFF
 
 // Node configuration options
 #define NODE_ID         "JH1"
 #define HOPS            "1"
 #define WAKE_FREQ       5
-#define TX_POWER_DBM    3
+#define TX_POWER_DBM    10
 
 /** Enable reg by Hi-Z'ing the pin and enable pull up */
 #define REG_ENABLE() do { EN_DDR &= ~_BV(EN_PIN); } while(0)
@@ -58,6 +58,8 @@ static uint8_t wakes = WAKE_FREQ;
 static char packetbuf[64];
 static int8_t temp_dec, temp_frac;
 static char *p;
+
+// Value to transmit for power saving mode
 
 // Get the voltage on the battery terminals in mV
 uint16_t get_batt_voltage(void);
@@ -112,6 +114,11 @@ int main()
             get_temperature(&temp_dec, &temp_frac);
             sprintf(p, "T%d.%d", temp_dec, temp_frac);
             p += strlen(p);
+#if 0
+            // Add wake freq, tx power and power save mode
+            sprintf(p, "X%u,%u", WAKE_FREQ, TX_POWER_DBM);
+            p += strlen(p);
+#endif
             // Add node ID in []
             *p++ = '[';
             strcpy(p, NODE_ID);
@@ -142,7 +149,8 @@ int main()
             wakes++;
         }
 
-#ifdef USE_VDETECT
+        /* What we do now depends on the power save mode */
+#ifdef MODE_BOOSTOFF
         // Interrupt on INT0 low level
         MCUCR &= ~(_BV(ISC01) | _BV(ISC00));
         GIMSK |= _BV(INT0);
@@ -169,12 +177,11 @@ int main()
         sei();
         sleep_cpu();   
         sleep_disable();
-
-#endif /* USE_VDETECT */
+#endif
     }
 
     return 0;
-}
+} /* Main application loop -- never leave here */
 
 /**
  * Return the temperature from the onboard DS18B20 to precision 0.1degC

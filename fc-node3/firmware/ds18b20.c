@@ -132,7 +132,7 @@ double ds18b20_gettemp() {
 	#endif
 
 	//convert the 12 bit value obtained
-	retd = ( ( temperature_h << 8 ) + temperature_l ) * 0.0625;
+	retd = (int16_t)(((temperature_h << 8) + temperature_l)) * 0.0625;
 
 	return retd;
 }
