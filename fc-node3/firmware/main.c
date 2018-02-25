@@ -38,7 +38,7 @@
 #define MODE_BOOSTOFF
 
 // Node configuration options
-#define NODE_ID         "JH1"
+#define NODE_ID         "JH0"
 #define HOPS            "1"
 #define WAKE_FREQ       5
 #define TX_POWER_DBM    10
@@ -105,18 +105,33 @@ int main()
             strcpy(p, HOPS);
             p += strlen(p);
             // Add seqid
-            sprintf(p, "%c", seqid);
-            p += strlen(p);
+            *p++ = seqid;
             // Add voltage
-            sprintf(p, "V%u", get_batt_voltage());
+            *p++ = 'V';
+            utoa(get_batt_voltage(), p, 10);
             p += strlen(p);
             // Add temperature
             get_temperature(&temp_dec, &temp_frac);
-            sprintf(p, "T%d.%d", temp_dec, temp_frac);
+            *p++ = 'T';
+            itoa(temp_dec, p, 10);
             p += strlen(p);
-#if 0
+            *p++ = '.';
+            itoa(temp_frac, p, 10);
+            p += strlen(p);
+#if 1
             // Add wake freq, tx power and power save mode
-            sprintf(p, "X%u,%u", WAKE_FREQ, TX_POWER_DBM);
+            *p++ = 'X';
+            utoa(WAKE_FREQ, p, 10);
+            p += strlen(p);
+            *p++ = ',';
+            utoa(TX_POWER_DBM, p, 10);
+            p += strlen(p);
+            *p++ = ',';
+#ifdef MODE_BOOSTOFF
+            utoa(1, p, 10);
+#else
+            utoa(0, p, 10);
+#endif
             p += strlen(p);
 #endif
             // Add node ID in []
